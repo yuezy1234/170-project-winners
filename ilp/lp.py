@@ -47,8 +47,8 @@ print('Number of variables =', solver.NumVariables())
 # Constraints
 for i,j in cities:
     constraint = 0
-    for ip in range(i-3, i+Rs+1):
-        for jp in range(j-3, j+Rs+1):
+    for ip in range(i-Rs, i+Rs+1):
+        for jp in range(j-Rs, j+Rs+1):
             if ip >= 0 and jp >= 0 and ip < D and jp < D and (i - ip)**2 + (j - jp)**2 <= Rs**2:
                 constraint += x[ip][jp]
 
