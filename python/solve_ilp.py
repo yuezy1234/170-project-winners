@@ -84,7 +84,7 @@ def ilp_solver(instance: Instance) -> Solution:
     P = 0
     for i in range(D):
         for j in range(D):
-            P += 0.17 * w[i][j] + math.log(170)     # TODO: Fix obj function
+            P += 0.17 * w[i][j] + math.log(170) * x[i][j]    # TODO: Fix obj function
     solver.Minimize(P)
 
     # Solve
