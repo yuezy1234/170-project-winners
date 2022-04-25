@@ -15,6 +15,7 @@ from file_wrappers import StdinFileWrapper, StdoutFileWrapper
 
 from solve_ilp import ilp_solver
 from solve_cvx import cvx_solver
+from solve_greedy import greedy_solver
 
 
 def solve_naive(instance: Instance) -> Solution:
@@ -29,11 +30,14 @@ def solve_ilp(instance: Instance) -> Solution:
 def solve_cvx(instance: Instance) -> Solution:
     return cvx_solver(instance)
 
+def solve_greedy(instance: Instance) -> Solution:
+    return greedy_solver(instance)
 
 SOLVERS: Dict[str, Callable[[Instance], Solution]] = {
     "naive": solve_naive, 
     "ilp": solve_ilp,
-    "cvx": solve_cvx
+    "cvx": solve_cvx,
+    "greedy": solve_greedy,
 }
 
 

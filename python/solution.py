@@ -27,8 +27,10 @@ class Solution:
         """
         for tower in self.towers:
             if not 0 <= tower.x < self.instance.grid_side_length:
+                print(f"city at {tower.x}, {tower.y} not in x bound")
                 return False
             if not 0 <= tower.y < self.instance.grid_side_length:
+                print(f"city at {tower.x}, {tower.y} not in y bound")
                 return False
 
         for city in self.instance.cities:
@@ -36,6 +38,7 @@ class Solution:
                 if Point.distance_obj(city, tower) <= self.instance.coverage_radius:
                     break
             else:
+                print(f"no tower covering city at {city.x}, {city.y}")
                 return False
 
         return len(set(self.towers)) == len(self.towers)
