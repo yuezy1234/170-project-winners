@@ -12,6 +12,7 @@ from svg import SVGGraphic
 if TYPE_CHECKING:
     from visualize import VisualizationConfig
 
+import numpy as np
 
 @dataclasses.dataclass
 class Solution:
@@ -123,3 +124,9 @@ class Solution:
             )
 
         return out
+    
+    def anneal(self):
+        pass
+
+    def anneal_move(self):
+        move_dist = np.random.poisson()
