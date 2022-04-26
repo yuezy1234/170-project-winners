@@ -45,12 +45,12 @@ def greedy_solver(instance: Instance) -> Solution:
         city_map[x][y] += 1
         for square in squares_in_range(x, y, Rs, D):
             cities_in_range[square[0]][square[1]] += 1
-        for square in donut_in_range(x, y, Rs, Rp + Rs, D):
+        for square in donut_in_range(x, y, Rs, Rp, D):
             donuts_in_range[square[0]][square[1]] += 1
 
     city_award = 5
-    tower_penalty = -3
-    donut_penalty = -4
+    tower_penalty = -4
+    donut_penalty = -3
 
     while cities_left > 0:
         best_rating_square = [0, 0]
@@ -58,9 +58,9 @@ def greedy_solver(instance: Instance) -> Solution:
         for x in range(D):
             for y in range(D):
                 if towers_map[x][y] == 0 and cities_in_range[x][y] > 0:
-                    current_rating = city_award * cities_in_range[x][y] 
-                    + tower_penalty * towers_in_range[x][y]
-                    + donut_penalty * donuts_in_range[x][y]
+                    current_rating = city_award * cities_in_range[x][y] \
+                        + tower_penalty * towers_in_range[x][y] \
+                        + donut_penalty * donuts_in_range[x][y]
                     if current_rating > best_rating:
                         best_rating_square = [x, y]
                         best_rating = current_rating
@@ -68,6 +68,8 @@ def greedy_solver(instance: Instance) -> Solution:
         x = best_rating_square[0]
         y = best_rating_square[1]
         towers_map[x][y] = 1
+        print(f"built tower at {x}, {y} with a score of {best_rating}")
+        print(cities_in_range[x][y], towers_in_range[x][y], donuts_in_range[x][y])
         for square in squares_in_range(x, y, Rs, D):
             city_x = square[0]
             city_y = square[1]
@@ -76,12 +78,12 @@ def greedy_solver(instance: Instance) -> Solution:
                 cities_left -= 1
                 for city_neighbor in squares_in_range(city_x, city_y, Rs, D):
                     cities_in_range[city_neighbor[0]][city_neighbor[1]] -= 1
-                for city_neighbor in donut_in_range(city_x, city_y, Rs, Rp + Rs, D):
+                for city_neighbor in donut_in_range(city_x, city_y, Rs, Rp, D):
                     donuts_in_range[city_neighbor[0]][city_neighbor[1]] -= 1
         for square in squares_in_range(x, y, Rp, D):
             towers_in_range[square[0]][square[1]] += 1
         
-        print(f"built tower at {x}, {y} with a score of {best_rating}")
+        
 
     sol = Solution(instance=instance,
                         towers=[Point(x=i,y=j) for i in range(D) for j in range(D) if towers_map[i][j]>0])
