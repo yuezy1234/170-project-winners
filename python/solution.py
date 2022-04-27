@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import dataclasses
 import math
-from typing import Iterable, List, TYPE_CHECKING
+from typing import Iterable, List, Dict, TYPE_CHECKING
 
 import parse
 from instance import Instance
@@ -52,6 +52,7 @@ class Solution:
     def penalty(self):
         """Computes the penalty for this solution."""
         penalty = 0
+        self.tower_overlap = np.zeros(len(self.towers))
         for fidx, first in enumerate(self.towers):
             num_overlaps = 0
             for sidx, second in enumerate(self.towers):
@@ -59,6 +60,7 @@ class Solution:
                     continue
                 if Point.distance_obj(first, second) <= self.instance.penalty_radius:
                     num_overlaps += 1
+            self.tower_overlap[fidx] = num_overlaps
             penalty += 170 * math.exp(0.17 * num_overlaps)
         return penalty
 
@@ -126,7 +128,39 @@ class Solution:
         return out
     
     def anneal(self):
-        pass
+        T = 100
+        D = self.instance.D
 
-    def anneal_move(self):
-        move_dist = np.random.poisson()
+        while True:
+            self.curr_pen = self.penalty()
+            tower_penalty_proportion = self.tower_overlap / np.sum(self.tower_overlap)
+            # Can change to non-linear proportion
+            # tower_penalty_proportion = tower_penalty_proportion ** 2 
+            # tower_penalty_proportion = tower_penalty_proportion / np.sum(tower_penalty_proportion)
+
+            tower_moved = np.random.choice(len(self.towers), p=tower_penalty_proportion)
+            tower_x = self.towers[tower_moved].x
+            tower_y = self.towers[tower_moved].y
+            dx = 0
+            dy = 0
+
+            while not (dx == 0 and dy == 0) and tower_x + dx >= 0 and tower_x + dx < D and tower_y + dy >= 0 and tower_y + dy < D:
+                x_abs = np.random.geometric(0.5) + 1
+                y_abs = np.random.geometric(0.5) + 1
+
+                dx = (np.random.randint(3) - 1) * x_abs
+                dy = (np.random.randint(3) - 1) * y_abs
+            
+            new_x = tower_x + dx
+            new_y = tower_y + dy
+            
+            self.towers[tower_moved] = Point(new_x, new_y)
+            new_penalty = self.penalty()
+            delta = new_penalty - self.curr_pen
+            if delta < 0:
+                self.curr_pen = new_penalty
+            else:
+                if np.random.rand() < np.exp(-delta * T):
+                    self.curr_pen = new_penalty
+                else:
+                    self.towers[tower_moved] = Point(tower_x, tower_y)

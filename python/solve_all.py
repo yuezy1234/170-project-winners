@@ -19,9 +19,9 @@ from solution import Solution
 
 # Modify this line to import your own solvers.
 # YOUR CODE HERE
-from solve import solve_naive, solve_ilp
+from solve import solve_naive, solve_ilp, solve_greedy
 
-solve = solve_ilp
+solve = solve_greedy
 
 class Size(enum.Enum):
     SMALL = "small"

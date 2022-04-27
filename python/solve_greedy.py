@@ -68,8 +68,8 @@ def greedy_solver(instance: Instance) -> Solution:
         x = best_rating_square[0]
         y = best_rating_square[1]
         towers_map[x][y] = 1
-        print(f"built tower at {x}, {y} with a score of {best_rating}")
-        print(cities_in_range[x][y], towers_in_range[x][y], donuts_in_range[x][y])
+        # print(f"built tower at {x}, {y} with a score of {best_rating}")
+        # print(cities_in_range[x][y], towers_in_range[x][y], donuts_in_range[x][y])
         for square in squares_in_range(x, y, Rs, D):
             city_x = square[0]
             city_y = square[1]
