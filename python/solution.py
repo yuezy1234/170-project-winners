@@ -130,31 +130,44 @@ class Solution:
     def anneal(self):
         T = 100
         D = self.instance.D
+        cities = self.instance.cities
 
-        while True:
+        while T > 0:
             self.curr_pen = self.penalty()
             tower_penalty_proportion = self.tower_overlap / np.sum(self.tower_overlap)
             # Can change to non-linear proportion
             # tower_penalty_proportion = tower_penalty_proportion ** 2 
             # tower_penalty_proportion = tower_penalty_proportion / np.sum(tower_penalty_proportion)
-
+            print(tower_penalty_proportion)
             tower_moved = np.random.choice(len(self.towers), p=tower_penalty_proportion)
             tower_x = self.towers[tower_moved].x
             tower_y = self.towers[tower_moved].y
+
+            curr_cities_covered = self.cities_covered(self.towers[tower_moved])
+
             dx = 0
             dy = 0
-
-            while not (dx == 0 and dy == 0) and tower_x + dx >= 0 and tower_x + dx < D and tower_y + dy >= 0 and tower_y + dy < D:
-                x_abs = np.random.geometric(0.5) + 1
-                y_abs = np.random.geometric(0.5) + 1
+            while not((dx != 0 or dy != 0) and tower_x + dx >= 0 and tower_x + dx < D and tower_y + dy >= 0 and tower_y + dy < D):
+                x_abs = np.random.poisson(0.5) + 1
+                y_abs = np.random.poisson(0.5) + 1
 
                 dx = (np.random.randint(3) - 1) * x_abs
                 dy = (np.random.randint(3) - 1) * y_abs
             
+            print(dx, dy)
+
             new_x = tower_x + dx
             new_y = tower_y + dy
             
             self.towers[tower_moved] = Point(new_x, new_y)
+            new_cities_covered = self.cities_covered(self.towers[tower_moved])
+
+            if new_cities_covered != curr_cities_covered:
+                uncovered = curr_cities_covered.difference(new_cities_covered)
+                for u in uncovered:
+                    pass
+
+
             new_penalty = self.penalty()
             delta = new_penalty - self.curr_pen
             if delta < 0:
@@ -164,3 +177,18 @@ class Solution:
                     self.curr_pen = new_penalty
                 else:
                     self.towers[tower_moved] = Point(tower_x, tower_y)
+            
+            if(self.curr_pen == new_penalty):
+                print(f"Moving ({tower_x}, {tower_y}) to ({new_x}, {new_y})")
+            else:
+                print("No Move")
+            
+            T -= 1
+
+    def cities_covered(self, t):
+        covered = set()
+        for city in self.instance.cities:
+            if (city.x - t.x) ** 2 + (city.y - t.y) ** 2 <= instance.Rs ** 2:
+                covered.add(city)
+        return covered
+            
