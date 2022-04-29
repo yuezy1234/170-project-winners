@@ -8,6 +8,7 @@ import math
 import numpy as np
 
 import time
+import json
 
 def squares_in_range(x, y, radius, D):
     squares = []
@@ -26,6 +27,14 @@ def donut_in_range(x, y, inner, outer, D):
     return squares
 
 def greedy_solver(instance: Instance) -> Solution:
+
+    with open('top_score.json', 'r') as f:
+        top_scores = json.loads(json.load(f))
+    
+    desired = top_scores[instance.size][instance.num]
+
+    start = time.time()
+
     best_sol = None
     best_penalty = float("inf")
     for iter in range(10000):
@@ -89,7 +98,7 @@ def greedy_solver(instance: Instance) -> Solution:
             prob = prob - np.min(prob)
             # print("After shift")
             # print(prob)
-            tops = prob > (0.9 * max(prob))
+            tops = prob > (0.6 * max(prob))
             prob = (prob * tops) 
             # print(prob)
             # print(np.sum(prob))
@@ -130,21 +139,30 @@ def greedy_solver(instance: Instance) -> Solution:
                             towers=tower_sol)
         osol = Solution(instance=instance,
                             towers=tower_sol)
-        curr_penalty = sol.penalty()
-        if curr_penalty < best_penalty:
-            best_sol = sol
-            best_penalty = curr_penalty
 
         # if sol.penalty() < 1600:
         #     print(sol.penalty())
         #     print([(i,j) for i in range(D) for j in range(D) if towers_map[i][j]>0])
         #     break
         # break
-        print(sol.penalty())
+        # print(sol.penalty())
         sol.anneal()
         if sol.penalty() > osol.penalty():
             sol = osol
-        if sol.penalty() < 4800:
+        # if sol.penalty() < 4800:
+        #     break
+
+        curr_penalty = sol.penalty()
+        if curr_penalty < best_penalty:
+            best_sol = sol
+            best_penalty = curr_penalty
+            with instance.sol_outf.open('w') as g:
+                best_sol.serialize(g)
+        
+        if best_penalty < desired + 5 or time.time() - start >= 3600:
             break
+        
+        # print(best_penalty)
+        
     return best_sol
     

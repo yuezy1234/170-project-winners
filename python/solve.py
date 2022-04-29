@@ -64,11 +64,15 @@ def outfile(args):
 def main(args):
     with infile(args) as f:
         instance = Instance.parse(f.readlines())
+        inf = Path(args.input)
+        instance.num = int(inf.stem)-1
+        instance.size = inf.parent.stem
+        instance.sol_outf = outfile(args)
         solver = SOLVERS[args.solver]
         solution = solver(instance)
         assert solution.valid()
         with outfile(args) as g:
-            print("# Penalty: ", solution.penalty(), file=g)
+            # print("# Penalty: ", solution.penalty(), file=g)
             solution.serialize(g)
 
 
