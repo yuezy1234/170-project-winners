@@ -81,6 +81,7 @@ class Solution:
         return sol
 
     def serialize(self, out):
+        print("# Penalty: ", self.penalty(), file=out)
         print(len(self.towers), file=out)
         for tower in self.towers:
             print(tower.x, tower.y, file=out)
@@ -128,13 +129,15 @@ class Solution:
         return out
     
     def anneal(self):
-        T = 10000
+        T = 1000
         D = self.instance.D
         cities = self.instance.cities
 
         while T > 0.01:
             self.curr_pen = self.penalty()
             old_penalty = self.curr_pen
+            if np.sum(self.tower_overlap) == 0:
+                break
             tower_penalty_proportion = self.tower_overlap / np.sum(self.tower_overlap)
             # Can change to non-linear proportion
             # tower_penalty_proportion = tower_penalty_proportion ** 2 

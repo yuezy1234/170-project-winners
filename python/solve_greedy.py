@@ -8,6 +8,7 @@ import math
 import numpy as np
 
 import time
+import json
 
 def squares_in_range(x, y, radius, D):
     squares = []
@@ -26,7 +27,6 @@ def donut_in_range(x, y, inner, outer, D):
     return squares
 
 def greedy_solver(instance: Instance) -> Solution:
-    print("Hello")
     best_sol = None
     best_penalty = float("inf")
     for iter in range(10000):
@@ -90,7 +90,7 @@ def greedy_solver(instance: Instance) -> Solution:
             prob = prob - np.min(prob)
             # print("After shift")
             # print(prob)
-            tops = prob > (0.9 * max(prob))
+            tops = prob > (0.6 * max(prob))
             prob = (prob * tops) 
             # print(prob)
             # print(np.sum(prob))
@@ -131,10 +131,6 @@ def greedy_solver(instance: Instance) -> Solution:
                             towers=tower_sol)
         osol = Solution(instance=instance,
                             towers=tower_sol)
-        curr_penalty = sol.penalty()
-        if curr_penalty < best_penalty:
-            best_sol = sol
-            best_penalty = curr_penalty
 
         # if sol.penalty() < 1600:
         #     print(sol.penalty())
@@ -146,7 +142,10 @@ def greedy_solver(instance: Instance) -> Solution:
         print("After:", sol.penalty())
         if sol.penalty() > osol.penalty():
             sol = osol
-        if sol.penalty() < 1430:
+        if sol.penalty() < 4800:
             break
+        
+        # print(best_penalty)
+        
     return best_sol
     
