@@ -1,0 +1,979 @@
+Info: using parallelism=cpu_count() (20)
+inputs/small/124.in: spawning job
+inputs/small/108.in: spawning job
+inputs/small/180.in: spawning job
+inputs/small/146.in: spawning job
+inputs/small/035.in: spawning job
+inputs/small/047.in: spawning job
+inputs/small/007.in: spawning job
+inputs/small/070.in: spawning job
+inputs/small/205.in: spawning job
+inputs/small/121.in: spawning job
+inputs/small/119.in: spawning job
+inputs/small/014.in: spawning job
+inputs/small/241.in: spawning job
+inputs/small/128.in: spawning job
+inputs/small/181.in: spawning job
+inputs/small/036.in: spawning job
+inputs/small/225.in: spawning job
+inputs/small/174.in: spawning job
+inputs/small/012.in: spawning job
+inputs/small/067.in: spawning job
+inputs/small/047.in: solution found with penalty 641.8447398447352
+inputs/small/022.in: spawning job
+inputs/small/180.in: solution found with penalty 641.8447398447352
+inputs/small/134.in: spawning job
+inputs/small/181.in: solution found with penalty 641.8447398447352
+inputs/small/199.in: spawning job
+inputs/small/146.in: solution found with penalty 806.0072988978485
+inputs/small/060.in: spawning job
+inputs/small/225.in: solution found with penalty 1360.0
+inputs/small/184.in: spawning job
+inputs/small/119.in: solution found with penalty 1190.0
+inputs/small/078.in: spawning job
+inputs/small/007.in: solution found with penalty 1360.0
+inputs/small/185.in: spawning job
+inputs/small/174.in: solution found with penalty 1593.003649448924
+inputs/small/120.in: spawning job
+inputs/small/108.in: solution found with penalty 1996.0072988978484
+inputs/small/087.in: spawning job
+inputs/small/241.in: solution found with penalty 1661.8447398447352
+inputs/small/008.in: spawning job
+inputs/small/014.in: solution found with penalty 1933.003649448924
+inputs/small/084.in: spawning job
+inputs/small/036.in: solution found with penalty 1700.0
+inputs/small/197.in: spawning job
+inputs/small/070.in: solution found with penalty 2040.0
+inputs/small/079.in: spawning job
+inputs/small/035.in: solution found with penalty 1933.0036494489243
+inputs/small/086.in: spawning job
+inputs/small/067.in: solution found with penalty 2001.8447398447352
+inputs/small/211.in: spawning job
+inputs/small/128.in: solution found with penalty 2166.007298897848
+inputs/small/075.in: spawning job
+inputs/small/022.in: solution found with penalty 1763.0036494489243
+inputs/small/158.in: spawning job
+inputs/small/121.in: solution found with penalty 2234.8483892936592
+inputs/small/191.in: spawning job
+inputs/small/012.in: solution found with penalty 2404.8483892936592
+inputs/small/166.in: spawning job
+inputs/small/199.in: solution found with penalty 1763.003649448924
+inputs/small/234.in: spawning job
+inputs/small/205.in: solution found with penalty 3312.0145977956963
+inputs/small/123.in: spawning job
+inputs/small/124.in: solution found with penalty 2909.0109483467722
+inputs/small/095.in: spawning job
+inputs/small/134.in: solution found with penalty 2103.003649448924
+inputs/small/110.in: spawning job
+inputs/small/075.in: solution found with penalty 955.3643615832437
+inputs/small/076.in: spawning job
+inputs/small/211.in: solution found with penalty 981.8447398447353
+inputs/small/091.in: spawning job
+inputs/small/078.in: solution found with penalty 2040.0
+inputs/small/039.in: spawning job
+inputs/small/120.in: solution found with penalty 1870.0
+inputs/small/178.in: spawning job
+inputs/small/060.in: solution found with penalty 2273.003649448924
+inputs/small/217.in: spawning job
+inputs/small/008.in: solution found with penalty 2040.0
+inputs/small/140.in: spawning job
+inputs/small/191.in: solution found with penalty 1593.0036494489243
+inputs/small/168.in: spawning job
+inputs/small/123.in: solution found with penalty 641.8447398447352
+inputs/small/133.in: spawning job
+inputs/small/197.in: solution found with penalty 1925.5342195342052
+inputs/small/062.in: spawning job
+inputs/small/079.in: solution found with penalty 1724.8483892936592
+inputs/small/231.in: spawning job
+inputs/small/087.in: solution found with penalty 2399.0109483467722
+inputs/small/055.in: spawning job
+inputs/small/158.in: solution found with penalty 1826.0072988978484
+inputs/small/115.in: spawning job
+inputs/small/185.in: solution found with penalty 2372.5305700852814
+inputs/small/177.in: spawning job
+inputs/small/178.in: solution found with penalty 641.8447398447352
+inputs/small/046.in: spawning job
+inputs/small/168.in: solution found with penalty 641.8447398447352
+inputs/small/131.in: spawning job
+inputs/small/086.in: solution found with penalty 2273.003649448924
+inputs/small/233.in: spawning job
+inputs/small/095.in: solution found with penalty 1996.0072988978486
+inputs/small/192.in: spawning job
+inputs/small/091.in: solution found with penalty 1763.0036494489243
+inputs/small/044.in: spawning job
+inputs/small/184.in: solution found with penalty 3316.2200497747513
+inputs/small/143.in: spawning job
+inputs/small/166.in: solution found with penalty 1894.8483892936592
+inputs/small/043.in: spawning job
+inputs/small/177.in: solution found with penalty 641.8447398447352
+inputs/small/053.in: spawning job
+inputs/small/110.in: solution found with penalty 1826.0072988978486
+inputs/small/030.in: spawning job
+inputs/small/217.in: solution found with penalty 1763.003649448924
+inputs/small/048.in: spawning job
+inputs/small/076.in: solution found with penalty 2040.0
+inputs/small/215.in: spawning job
+inputs/small/039.in: solution found with penalty 1870.0
+inputs/small/198.in: spawning job
+inputs/small/062.in: solution found with penalty 1549.0109483467727
+inputs/small/113.in: spawning job
+inputs/small/053.in: solution found with penalty 403.00364944892425
+inputs/small/136.in: spawning job
+inputs/small/115.in: solution found with penalty 1530.0
+inputs/small/151.in: spawning job
+inputs/small/140.in: solution found with penalty 2040.0
+inputs/small/224.in: spawning job
+inputs/small/133.in: solution found with penalty 1763.003649448924
+inputs/small/017.in: spawning job
+inputs/small/084.in: solution found with penalty 5166.108535745824
+inputs/small/056.in: spawning job
+inputs/small/234.in: solution found with penalty 3814.5451678809777
+inputs/small/026.in: spawning job
+inputs/small/131.in: solution found with penalty 1700.0
+inputs/small/238.in: spawning job
+inputs/small/055.in: solution found with penalty 1870.0
+inputs/small/194.in: spawning job
+inputs/small/043.in: solution found with penalty 1700.0
+inputs/small/188.in: spawning job
+inputs/small/046.in: solution found with penalty 1933.003649448924
+inputs/small/207.in: spawning job
+inputs/small/136.in: solution found with penalty 1316.0072988978484
+inputs/small/034.in: spawning job
+inputs/small/143.in: solution found with penalty 1933.003649448924
+inputs/small/130.in: spawning job
+inputs/small/231.in: solution found with penalty 2530.8556881915074
+inputs/small/201.in: spawning job
+inputs/small/224.in: solution found with penalty 1020.0
+inputs/small/162.in: spawning job
+inputs/small/030.in: solution found with penalty 2103.003649448924
+inputs/small/144.in: spawning job
+inputs/small/151.in: solution found with penalty 1530.0
+inputs/small/160.in: spawning job
+inputs/small/198.in: solution found with penalty 1831.8447398447352
+inputs/small/031.in: spawning job
+inputs/small/215.in: solution found with penalty 2103.003649448924
+inputs/small/118.in: spawning job
+inputs/small/044.in: solution found with penalty 2273.003649448924
+inputs/small/147.in: spawning job
+inputs/small/113.in: solution found with penalty 1870.0
+inputs/small/015.in: spawning job
+inputs/small/192.in: solution found with penalty 2739.0109483467722
+inputs/small/011.in: spawning job
+inputs/small/144.in: solution found with penalty 573.0036494489243
+inputs/small/065.in: spawning job
+inputs/small/017.in: solution found with penalty 1826.0072988978484
+inputs/small/029.in: spawning job
+inputs/small/026.in: solution found with penalty 1724.8483892936595
+inputs/small/156.in: spawning job
+inputs/small/056.in: solution found with penalty 2399.0109483467727
+inputs/small/066.in: spawning job
+inputs/small/188.in: solution found with penalty 1700.0
+inputs/small/221.in: spawning job
+inputs/small/160.in: solution found with penalty 1253.0036494489243
+inputs/small/080.in: spawning job
+inputs/small/130.in: solution found with penalty 1593.0036494489243
+inputs/small/208.in: spawning job
+inputs/small/194.in: solution found with penalty 2103.003649448924
+inputs/small/139.in: spawning job
+inputs/small/238.in: solution found with penalty 2177.131897950544
+inputs/small/077.in: spawning job
+inputs/small/029.in: solution found with penalty 955.3643615832437
+inputs/small/092.in: spawning job
+inputs/small/031.in: solution found with penalty 1933.003649448924
+inputs/small/083.in: spawning job
+inputs/small/048.in: solution found with penalty 4286.389907725713
+inputs/small/154.in: spawning job
+inputs/small/233.in: solution found with penalty 5604.553750255428
+inputs/small/045.in: spawning job
+inputs/small/118.in: solution found with penalty 1423.0036494489243
+inputs/small/038.in: spawning job
+inputs/small/034.in: solution found with penalty 2040.0
+inputs/small/109.in: spawning job
+inputs/small/147.in: solution found with penalty 1593.0036494489243
+inputs/small/063.in: spawning job
+inputs/small/207.in: solution found with penalty 2506.0072988978486
+inputs/small/103.in: spawning job
+inputs/small/015.in: solution found with penalty 2166.007298897848
+inputs/small/126.in: spawning job
+inputs/small/162.in: solution found with penalty 1996.0072988978484
+inputs/small/153.in: spawning job
+inputs/small/065.in: solution found with penalty 1661.8447398447352
+inputs/small/161.in: spawning job
+inputs/small/109.in: solution found with penalty 170.0
+inputs/small/239.in: spawning job
+inputs/small/066.in: solution found with penalty 880.6858302405461
+inputs/small/040.in: spawning job
+inputs/small/201.in: solution found with penalty 3040.8556881915074
+inputs/small/081.in: spawning job
+inputs/small/139.in: solution found with penalty 1119.526920636357
+inputs/small/200.in: spawning job
+inputs/small/011.in: solution found with penalty 2103.003649448924
+inputs/small/176.in: spawning job
+inputs/small/156.in: solution found with penalty 1933.003649448924
+inputs/small/172.in: spawning job
+inputs/small/080.in: solution found with penalty 1384.8483892936595
+inputs/small/183.in: spawning job
+inputs/small/063.in: solution found with penalty 1360.0
+inputs/small/219.in: spawning job
+inputs/small/077.in: solution found with penalty 1870.0
+inputs/small/085.in: spawning job
+inputs/small/045.in: solution found with penalty 1700.0
+inputs/small/216.in: spawning job
+inputs/small/103.in: solution found with penalty 1423.0036494489243
+inputs/small/073.in: spawning job
+inputs/small/208.in: solution found with penalty 2404.8483892936592
+inputs/small/236.in: spawning job
+inputs/small/200.in: solution found with penalty 1151.8447398447352
+inputs/small/018.in: spawning job
+inputs/small/038.in: solution found with penalty 1763.003649448924
+inputs/small/212.in: spawning job
+inputs/small/221.in: solution found with penalty 2336.007298897848
+inputs/small/025.in: spawning job
+inputs/small/154.in: solution found with penalty 2103.003649448924
+inputs/small/019.in: spawning job
+inputs/small/092.in: solution found with penalty 2166.007298897848
+inputs/small/050.in: spawning job
+inputs/small/083.in: solution found with penalty 2336.007298897848
+inputs/small/152.in: spawning job
+inputs/small/176.in: solution found with penalty 1530.0
+inputs/small/058.in: spawning job
+inputs/small/239.in: solution found with penalty 1447.8520387425835
+inputs/small/071.in: spawning job
+inputs/small/040.in: solution found with penalty 1724.8483892936592
+inputs/small/072.in: spawning job
+inputs/small/161.in: solution found with penalty 1870.0
+inputs/small/105.in: spawning job
+inputs/small/236.in: solution found with penalty 641.8447398447352
+inputs/small/148.in: spawning job
+inputs/small/172.in: solution found with penalty 1826.0072988978482
+inputs/small/227.in: spawning job
+inputs/small/126.in: solution found with penalty 2103.003649448924
+inputs/small/100.in: spawning job
+inputs/small/183.in: solution found with penalty 1700.0
+inputs/small/042.in: spawning job
+inputs/small/081.in: solution found with penalty 2166.007298897848
+inputs/small/116.in: spawning job
+inputs/small/153.in: solution found with penalty 2506.007298897848
+inputs/small/195.in: spawning job
+inputs/small/072.in: solution found with penalty 850.0
+inputs/small/088.in: spawning job
+inputs/small/219.in: solution found with penalty 1371.1245990526954
+inputs/small/024.in: spawning job
+inputs/small/042.in: solution found with penalty 641.8447398447352
+inputs/small/165.in: spawning job
+inputs/small/085.in: solution found with penalty 1996.0072988978484
+inputs/small/141.in: spawning job
+inputs/small/073.in: solution found with penalty 1933.0036494489243
+inputs/small/097.in: spawning job
+inputs/small/019.in: solution found with penalty 1763.003649448924
+inputs/small/232.in: spawning job
+inputs/small/212.in: solution found with penalty 1870.0
+inputs/small/125.in: spawning job
+inputs/small/105.in: solution found with penalty 1253.0036494489243
+inputs/small/190.in: spawning job
+inputs/small/216.in: solution found with penalty 2171.844739844735
+inputs/small/004.in: spawning job
+inputs/small/018.in: solution found with penalty 1933.0036494489243
+inputs/small/169.in: spawning job
+inputs/small/152.in: solution found with penalty 1661.844739844735
+inputs/small/135.in: spawning job
+inputs/small/148.in: solution found with penalty 1360.0
+inputs/small/137.in: spawning job
+inputs/small/025.in: solution found with penalty 2229.0109483467722
+inputs/small/093.in: spawning job
+inputs/small/050.in: solution found with penalty 2273.003649448924
+inputs/small/129.in: spawning job
+inputs/small/100.in: solution found with penalty 1530.0
+inputs/small/051.in: spawning job
+inputs/small/141.in: solution found with penalty 1020.0
+inputs/small/052.in: spawning job
+inputs/small/058.in: solution found with penalty 2166.0072988978486
+inputs/small/182.in: spawning job
+inputs/small/116.in: solution found with penalty 1870.0
+inputs/small/002.in: spawning job
+inputs/small/195.in: solution found with penalty 2040.0
+inputs/small/107.in: spawning job
+inputs/small/165.in: solution found with penalty 1486.0072988978484
+inputs/small/106.in: spawning job
+inputs/small/088.in: solution found with penalty 1933.003649448924
+inputs/small/145.in: spawning job
+inputs/small/024.in: solution found with penalty 1763.003649448924
+inputs/small/033.in: spawning job
+inputs/small/125.in: solution found with penalty 1593.0036494489243
+inputs/small/061.in: spawning job
+inputs/small/190.in: solution found with penalty 1700.0
+inputs/small/010.in: spawning job
+inputs/small/097.in: solution found with penalty 1763.0036494489243
+inputs/small/193.in: spawning job
+inputs/small/051.in: solution found with penalty 880.6858302405461
+inputs/small/196.in: spawning job
+inputs/small/232.in: solution found with penalty 2210.0
+inputs/small/163.in: spawning job
+inputs/small/033.in: solution found with penalty 403.00364944892425
+inputs/small/175.in: spawning job
+inputs/small/129.in: solution found with penalty 1597.2091014279788
+inputs/small/203.in: spawning job
+inputs/small/004.in: solution found with penalty 1870.0
+inputs/small/218.in: spawning job
+inputs/small/061.in: solution found with penalty 743.0036494489243
+inputs/small/101.in: spawning job
+inputs/small/107.in: solution found with penalty 1656.0072988978484
+inputs/small/206.in: spawning job
+inputs/small/169.in: solution found with penalty 2234.8483892936592
+inputs/small/213.in: spawning job
+inputs/small/175.in: solution found with penalty 170.0
+inputs/small/020.in: spawning job
+inputs/small/052.in: solution found with penalty 1933.003649448924
+inputs/small/037.in: spawning job
+inputs/small/071.in: solution found with penalty 5151.303039378106
+inputs/small/006.in: spawning job
+inputs/small/135.in: solution found with penalty 2336.007298897848
+inputs/small/122.in: spawning job
+inputs/small/093.in: solution found with penalty 1933.003649448924
+inputs/small/005.in: spawning job
+inputs/small/002.in: solution found with penalty 2103.003649448924
+inputs/small/142.in: spawning job
+inputs/small/145.in: solution found with penalty 1933.0036494489243
+inputs/small/001.in: spawning job
+inputs/small/137.in: solution found with penalty 2865.018247244621
+inputs/small/132.in: spawning job
+inputs/small/182.in: solution found with penalty 2273.003649448924
+inputs/small/229.in: spawning job
+inputs/small/203.in: solution found with penalty 887.6049773141871
+inputs/small/210.in: spawning job
+inputs/small/193.in: solution found with penalty 1700.0
+inputs/small/170.in: spawning job
+inputs/small/227.in: solution found with penalty 5672.313134524485
+inputs/small/167.in: spawning job
+inputs/small/010.in: solution found with penalty 2569.0109483467722
+inputs/small/089.in: spawning job
+inputs/small/206.in: solution found with penalty 1151.8447398447352
+inputs/small/112.in: spawning job
+inputs/small/037.in: solution found with penalty 743.0036494489243
+inputs/small/027.in: spawning job
+inputs/small/170.in: solution found with penalty 170.0
+inputs/small/094.in: spawning job
+inputs/small/101.in: solution found with penalty 1283.6894796894703
+inputs/small/202.in: spawning job
+inputs/small/213.in: solution found with penalty 1020.0
+inputs/small/041.in: spawning job
+inputs/small/163.in: solution found with penalty 1933.003649448924
+inputs/small/222.in: spawning job
+inputs/small/218.in: solution found with penalty 2103.003649448924
+inputs/small/204.in: spawning job
+inputs/small/167.in: solution found with penalty 641.8447398447352
+inputs/small/098.in: spawning job
+inputs/small/106.in: solution found with penalty 3671.025546142469
+inputs/small/127.in: spawning job
+inputs/small/142.in: solution found with penalty 1486.0072988978484
+inputs/small/209.in: spawning job
+inputs/small/210.in: solution found with penalty 1083.0036494489243
+inputs/small/003.in: spawning job
+inputs/small/094.in: solution found with penalty 913.0036494489243
+inputs/small/013.in: spawning job
+inputs/small/005.in: solution found with penalty 1870.0
+inputs/small/186.in: spawning job
+inputs/small/006.in: solution found with penalty 1761.371660481092
+inputs/small/054.in: spawning job
+inputs/small/122.in: solution found with penalty 1933.003649448924
+inputs/small/226.in: spawning job
+inputs/small/020.in: solution found with penalty 2166.007298897848
+inputs/small/068.in: spawning job
+inputs/small/089.in: solution found with penalty 1530.0
+inputs/small/187.in: spawning job
+inputs/small/196.in: solution found with penalty 3550.7348585560567
+inputs/small/179.in: spawning job
+inputs/small/222.in: solution found with penalty 1141.5665133770244
+inputs/small/159.in: spawning job
+inputs/small/132.in: solution found with penalty 2040.0
+inputs/small/230.in: spawning job
+inputs/small/001.in: solution found with penalty 1933.0036494489243
+inputs/small/104.in: spawning job
+inputs/small/027.in: solution found with penalty 1933.003649448924
+inputs/small/074.in: spawning job
+inputs/small/098.in: solution found with penalty 1119.526920636357
+inputs/small/171.in: spawning job
+inputs/small/013.in: solution found with penalty 976.0072988978485
+inputs/small/059.in: spawning job
+inputs/small/112.in: solution found with penalty 2103.003649448924
+inputs/small/049.in: spawning job
+inputs/small/229.in: solution found with penalty 2676.007298897848
+inputs/small/235.in: spawning job
+inputs/small/202.in: solution found with penalty 1763.0036494489243
+inputs/small/114.in: spawning job
+inputs/small/159.in: solution found with penalty 403.00364944892425
+inputs/small/157.in: spawning job
+inputs/small/204.in: solution found with penalty 2040.0
+inputs/small/228.in: spawning job
+inputs/small/226.in: solution found with penalty 1530.0
+inputs/small/214.in: spawning job
+inputs/small/041.in: solution found with penalty 2292.014597795697
+inputs/small/223.in: spawning job
+inputs/small/209.in: solution found with penalty 2399.0109483467722
+inputs/small/102.in: spawning job
+inputs/small/068.in: solution found with penalty 1593.003649448924
+inputs/small/189.in: spawning job
+inputs/small/186.in: solution found with penalty 2103.003649448924
+inputs/small/090.in: spawning job
+inputs/small/054.in: solution found with penalty 2273.003649448924
+inputs/small/237.in: spawning job
+inputs/small/179.in: solution found with penalty 1799.526920636357
+inputs/small/111.in: spawning job
+inputs/small/114.in: solution found with penalty 1360.0
+inputs/small/164.in: spawning job
+inputs/small/235.in: solution found with penalty 1530.0
+inputs/small/173.in: spawning job
+inputs/small/074.in: solution found with penalty 1700.0
+inputs/small/069.in: spawning job
+inputs/small/127.in: solution found with penalty 2599.696778587319
+inputs/small/155.in: spawning job
+inputs/small/171.in: solution found with penalty 1763.003649448924
+inputs/small/150.in: spawning job
+inputs/small/230.in: solution found with penalty 2399.0109483467727
+inputs/small/117.in: spawning job
+inputs/small/059.in: solution found with penalty 1700.0
+inputs/small/009.in: spawning job
+inputs/small/187.in: solution found with penalty 2681.844739844735
+inputs/small/032.in: spawning job
+inputs/small/049.in: solution found with penalty 2103.003649448924
+inputs/small/023.in: spawning job
+inputs/small/090.in: solution found with penalty 1083.0036494489243
+inputs/small/016.in: spawning job
+inputs/small/237.in: solution found with penalty 1316.0072988978484
+inputs/small/028.in: spawning job
+inputs/small/104.in: solution found with penalty 2443.003649448924
+inputs/small/138.in: spawning job
+inputs/small/189.in: solution found with penalty 1214.8483892936595
+inputs/small/220.in: spawning job
+inputs/small/223.in: solution found with penalty 1870.0
+inputs/small/099.in: spawning job
+inputs/small/214.in: solution found with penalty 2040.0
+inputs/small/082.in: spawning job
+inputs/small/228.in: solution found with penalty 2103.003649448924
+inputs/small/096.in: spawning job
+inputs/small/111.in: solution found with penalty 1593.003649448924
+inputs/small/057.in: spawning job
+inputs/small/102.in: solution found with penalty 1933.0036494489243
+inputs/small/064.in: spawning job
+inputs/small/069.in: solution found with penalty 1360.0
+inputs/small/149.in: spawning job
+inputs/small/155.in: solution found with penalty 1220.6858302405462
+inputs/small/021.in: spawning job
+inputs/small/220.in: solution found with penalty 573.0036494489243
+inputs/medium/124.in: spawning job
+inputs/small/157.in: solution found with penalty 2506.007298897848
+inputs/medium/108.in: spawning job
+inputs/small/003.in: solution found with penalty 5556.470101080539
+inputs/medium/180.in: spawning job
+inputs/small/009.in: solution found with penalty 1360.0
+inputs/medium/146.in: spawning job
+inputs/small/164.in: solution found with penalty 1826.0072988978484
+inputs/medium/035.in: spawning job
+inputs/small/117.in: solution found with penalty 1894.8483892936592
+inputs/medium/047.in: spawning job
+inputs/small/150.in: solution found with penalty 2336.007298897848
+inputs/medium/007.in: spawning job
+inputs/small/173.in: solution found with penalty 2676.007298897848
+inputs/medium/070.in: spawning job
+inputs/small/149.in: solution found with penalty 880.6858302405461
+inputs/medium/205.in: spawning job
+inputs/small/032.in: solution found with penalty 2040.0
+inputs/medium/121.in: spawning job
+inputs/small/016.in: solution found with penalty 1933.0036494489243
+inputs/medium/119.in: spawning job
+inputs/small/138.in: solution found with penalty 1996.0072988978482
+inputs/medium/014.in: spawning job
+inputs/small/096.in: solution found with penalty 1593.0036494489243
+inputs/medium/128.in: spawning job
+inputs/small/023.in: solution found with penalty 1996.0072988978484
+inputs/medium/181.in: spawning job
+inputs/small/028.in: solution found with penalty 2229.0109483467727
+inputs/medium/036.in: spawning job
+inputs/small/082.in: solution found with penalty 1933.003649448924
+inputs/medium/225.in: spawning job
+inputs/small/099.in: solution found with penalty 1933.003649448924
+inputs/medium/174.in: spawning job
+inputs/small/057.in: solution found with penalty 2001.8447398447352
+inputs/medium/012.in: spawning job
+inputs/small/064.in: solution found with penalty 2103.003649448924
+inputs/medium/067.in: spawning job
+inputs/small/021.in: solution found with penalty 2273.003649448924
+inputs/medium/022.in: spawning job
+inputs/medium/180.in: solution found with penalty 1597.2091014279788
+inputs/medium/134.in: spawning job
+inputs/medium/047.in: solution found with penalty 1119.526920636357
+inputs/medium/199.in: spawning job
+inputs/medium/121.in: solution found with penalty 2074.8912822196007
+inputs/medium/060.in: spawning job
+inputs/medium/181.in: solution found with penalty 2074.8912822196007
+inputs/medium/184.in: spawning job
+inputs/medium/108.in: solution found with penalty 4767.294852575089
+inputs/medium/078.in: spawning job
+inputs/medium/119.in: solution found with penalty 5752.835975435712
+inputs/medium/185.in: spawning job
+inputs/medium/124.in: solution found with penalty 6495.18737196351
+inputs/medium/120.in: spawning job
+inputs/medium/036.in: solution found with penalty 5167.075737966261
+inputs/medium/087.in: spawning job
+inputs/medium/146.in: solution found with penalty 6432.600641893945
+inputs/medium/008.in: spawning job
+inputs/medium/035.in: solution found with penalty 5903.274744247862
+inputs/medium/084.in: spawning job
+inputs/medium/014.in: solution found with penalty 5294.715025831942
+inputs/medium/197.in: spawning job
+inputs/medium/022.in: solution found with penalty 6169.0256661107915
+inputs/medium/079.in: spawning job
+inputs/medium/070.in: solution found with penalty 7164.386882181856
+inputs/medium/086.in: spawning job
+inputs/medium/174.in: solution found with penalty 6086.460785474017
+inputs/medium/211.in: spawning job
+inputs/medium/128.in: solution found with penalty 7326.256582266789
+inputs/medium/075.in: spawning job
+inputs/medium/199.in: solution found with penalty 4690.058343922034
+inputs/medium/158.in: spawning job
+inputs/medium/225.in: solution found with penalty 6873.336306389642
+inputs/medium/191.in: spawning job
+inputs/medium/007.in: solution found with penalty 6955.786683120099
+inputs/medium/166.in: spawning job
+inputs/medium/205.in: solution found with penalty 8304.442236226501
+inputs/medium/234.in: spawning job
+inputs/medium/067.in: solution found with penalty 7084.83811211271
+inputs/medium/123.in: spawning job
+inputs/medium/012.in: solution found with penalty 7336.8652437346755
+inputs/medium/095.in: spawning job
+inputs/medium/134.in: solution found with penalty 6055.110168486075
+inputs/medium/110.in: spawning job
+inputs/medium/075.in: solution found with penalty 3724.8052802800385
+inputs/medium/076.in: spawning job
+inputs/medium/060.in: solution found with penalty 6924.464085659291
+inputs/medium/091.in: spawning job
+inputs/medium/123.in: solution found with penalty 1836.0501918237896
+inputs/medium/039.in: spawning job
+inputs/medium/185.in: solution found with penalty 4644.983936693128
+inputs/medium/178.in: spawning job
+inputs/medium/211.in: solution found with penalty 3838.848903543062
+inputs/medium/217.in: spawning job
+inputs/medium/079.in: solution found with penalty 4072.5305700852814
+inputs/medium/140.in: spawning job
+inputs/medium/197.in: solution found with penalty 7083.997347601671
+inputs/medium/168.in: spawning job
+inputs/medium/078.in: solution found with penalty 6568.55573225933
+inputs/medium/133.in: spawning job
+inputs/medium/084.in: solution found with penalty 5834.191415693517
+inputs/medium/062.in: spawning job
+inputs/medium/120.in: solution found with penalty 6223.713513060013
+inputs/medium/231.in: spawning job
+inputs/medium/008.in: solution found with penalty 6651.263136329556
+inputs/medium/055.in: spawning job
+inputs/medium/086.in: solution found with penalty 5122.666117484751
+inputs/medium/115.in: spawning job
+inputs/medium/191.in: solution found with penalty 5921.8687732152775
+inputs/medium/177.in: spawning job
+inputs/medium/158.in: solution found with penalty 5971.03412851692
+inputs/medium/046.in: spawning job
+inputs/medium/087.in: solution found with penalty 7820.184420080193
+inputs/medium/131.in: spawning job
+inputs/medium/234.in: solution found with penalty 6153.790716537446
+inputs/medium/233.in: spawning job
+inputs/medium/178.in: solution found with penalty 3022.11843927101
+inputs/medium/192.in: spawning job
+inputs/medium/110.in: solution found with penalty 6852.263915869411
+inputs/medium/044.in: spawning job
+inputs/medium/095.in: solution found with penalty 7459.197971046632
+inputs/medium/143.in: spawning job
+inputs/medium/166.in: solution found with penalty 8009.065378819782
+inputs/medium/043.in: spawning job
+inputs/medium/184.in: solution found with penalty 18225.995624906896
+inputs/medium/053.in: spawning job
+inputs/medium/177.in: solution found with penalty 1597.2091014279788
+inputs/medium/030.in: spawning job
+inputs/medium/091.in: solution found with penalty 4802.2273486726
+inputs/medium/048.in: spawning job
+inputs/medium/039.in: solution found with penalty 5896.785050379849
+inputs/medium/215.in: spawning job
+inputs/medium/076.in: solution found with penalty 6388.620474618061
+inputs/medium/198.in: spawning job
+inputs/medium/217.in: solution found with penalty 5381.068439068412
+inputs/medium/113.in: spawning job
+inputs/medium/168.in: solution found with penalty 6148.697678095495
+inputs/medium/136.in: spawning job
+inputs/medium/143.in: solution found with penalty 2313.7323726154114
+inputs/medium/151.in: spawning job
+inputs/medium/062.in: solution found with penalty 5218.302535441361
+inputs/medium/224.in: spawning job
+inputs/medium/140.in: solution found with penalty 6736.951762818631
+inputs/medium/017.in: spawning job
+inputs/medium/133.in: solution found with penalty 5669.418396484819
+inputs/medium/056.in: spawning job
+inputs/medium/115.in: solution found with penalty 5328.107682545429
+inputs/medium/026.in: spawning job
+inputs/medium/233.in: solution found with penalty 7251.820499346341
+inputs/medium/238.in: spawning job
+inputs/medium/131.in: solution found with penalty 5369.39355717464
+inputs/medium/194.in: spawning job
+inputs/medium/231.in: solution found with penalty 5570.079387415185
+inputs/medium/188.in: spawning job
+inputs/medium/046.in: solution found with penalty 5518.750619860035
+inputs/medium/207.in: spawning job
+inputs/medium/055.in: solution found with penalty 6627.032111808245
+inputs/medium/034.in: spawning job
+inputs/medium/192.in: solution found with penalty 5852.06048059903
+inputs/medium/130.in: spawning job
+inputs/medium/030.in: solution found with penalty 4788.5035584316365
+inputs/medium/201.in: spawning job
+inputs/medium/044.in: solution found with penalty 7007.143470202384
+inputs/medium/162.in: spawning job
+inputs/medium/198.in: solution found with penalty 6503.833609463389
+inputs/medium/144.in: spawning job
+inputs/medium/043.in: solution found with penalty 7936.750705123583
+inputs/medium/160.in: spawning job
+inputs/medium/201.in: solution found with penalty 1020.0
+inputs/medium/031.in: spawning job
+inputs/medium/194.in: solution found with penalty 3554.0939379501265
+inputs/medium/118.in: spawning job
+inputs/medium/224.in: solution found with penalty 5645.839624884637
+inputs/medium/147.in: spawning job
+inputs/medium/215.in: solution found with penalty 7131.624124066986
+inputs/medium/015.in: spawning job
+inputs/medium/053.in: solution found with penalty 14559.638399776763
+inputs/medium/011.in: spawning job
+inputs/medium/151.in: solution found with penalty 5976.0188711496885
+inputs/medium/065.in: spawning job
+inputs/medium/113.in: solution found with penalty 7172.588180775242
+inputs/medium/029.in: spawning job
+inputs/medium/207.in: solution found with penalty 4334.257625806745
+inputs/medium/156.in: spawning job
+inputs/medium/056.in: solution found with penalty 6167.263687535776
+inputs/medium/066.in: spawning job
+inputs/medium/026.in: solution found with penalty 5629.952422390164
+inputs/medium/221.in: spawning job
+inputs/medium/017.in: solution found with penalty 7572.232750830099
+inputs/medium/080.in: spawning job
+inputs/medium/136.in: solution found with penalty 14077.823773631442
+inputs/medium/208.in: spawning job
+inputs/medium/144.in: solution found with penalty 2313.7323726154114
+inputs/medium/139.in: spawning job
+inputs/medium/238.in: solution found with penalty 6758.991355559299
+inputs/medium/077.in: spawning job
+inputs/medium/188.in: solution found with penalty 5757.706214162164
+inputs/medium/092.in: spawning job
+inputs/medium/066.in: solution found with penalty 1836.0501918237896
+inputs/medium/083.in: spawning job
+inputs/medium/065.in: solution found with penalty 2244.8912822196007
+inputs/medium/154.in: spawning job
+inputs/medium/048.in: solution found with penalty 16495.509030122998
+inputs/medium/045.in: spawning job
+inputs/medium/034.in: solution found with penalty 7596.778724650718
+inputs/medium/038.in: spawning job
+inputs/medium/118.in: solution found with penalty 3764.8483892936592
+inputs/medium/109.in: spawning job
+inputs/medium/130.in: solution found with penalty 7299.34675079967
+inputs/medium/063.in: spawning job
+inputs/medium/031.in: solution found with penalty 5555.273891047467
+inputs/medium/103.in: spawning job
+inputs/medium/080.in: solution found with penalty 3810.1684136215868
+inputs/medium/126.in: spawning job
+inputs/medium/162.in: solution found with penalty 7322.826504194403
+inputs/medium/153.in: spawning job
+inputs/medium/147.in: solution found with penalty 5573.982423921199
+inputs/medium/161.in: spawning job
+inputs/medium/160.in: solution found with penalty 5596.559765676677
+inputs/medium/239.in: spawning job
+inputs/medium/156.in: solution found with penalty 6129.788699828773
+inputs/medium/040.in: spawning job
+inputs/medium/015.in: solution found with penalty 7035.020503889939
+inputs/medium/081.in: spawning job
+inputs/medium/011.in: solution found with penalty 5793.1477792228425
+inputs/medium/200.in: spawning job
+inputs/medium/139.in: solution found with penalty 4796.389907725714
+inputs/medium/176.in: spawning job
+inputs/medium/221.in: solution found with penalty 5426.559765676676
+inputs/medium/172.in: spawning job
+inputs/medium/029.in: solution found with penalty 7861.305416953439
+inputs/medium/183.in: spawning job
+inputs/medium/208.in: solution found with penalty 5562.193038121109
+inputs/medium/219.in: spawning job
+inputs/medium/239.in: solution found with penalty 1466.4460677099978
+inputs/medium/085.in: spawning job
+inputs/medium/045.in: solution found with penalty 4689.393557174639
+inputs/medium/216.in: spawning job
+inputs/medium/083.in: solution found with penalty 5411.754269308959
+inputs/medium/073.in: spawning job
+inputs/medium/092.in: solution found with penalty 6236.470101080539
+inputs/medium/236.in: spawning job
+inputs/medium/077.in: solution found with penalty 7473.135283399369
+inputs/medium/018.in: spawning job
+inputs/medium/154.in: solution found with penalty 6098.021163461472
+inputs/medium/212.in: spawning job
+inputs/medium/040.in: solution found with penalty 2660.6515196890527
+inputs/medium/025.in: spawning job
+inputs/medium/063.in: solution found with penalty 6067.437303300977
+inputs/medium/019.in: spawning job
+inputs/medium/038.in: solution found with penalty 6754.105631131983
+inputs/medium/050.in: spawning job
+inputs/medium/103.in: solution found with penalty 5466.871569463807
+inputs/medium/152.in: spawning job
+inputs/medium/219.in: solution found with penalty 4464.034880507947
+inputs/medium/058.in: spawning job
+inputs/medium/161.in: solution found with penalty 5570.1938913215035
+inputs/medium/071.in: spawning job
+inputs/medium/109.in: solution found with penalty 10007.432375968334
+inputs/medium/072.in: spawning job
+inputs/medium/126.in: solution found with penalty 6121.472897329069
+inputs/medium/105.in: spawning job
+inputs/medium/153.in: solution found with penalty 6794.983203461055
+inputs/medium/148.in: spawning job
+inputs/medium/200.in: solution found with penalty 5391.111331994354
+inputs/medium/227.in: spawning job
+inputs/medium/081.in: solution found with penalty 7076.735831724774
+inputs/medium/100.in: spawning job
+inputs/medium/216.in: solution found with penalty 4407.539501723379
+inputs/medium/042.in: spawning job
+inputs/medium/172.in: solution found with penalty 6468.70699370202
+inputs/medium/116.in: spawning job
+inputs/medium/183.in: solution found with penalty 5305.422705505278
+inputs/medium/195.in: spawning job
+inputs/medium/176.in: solution found with penalty 7441.45423141125
+inputs/medium/088.in: spawning job
+inputs/medium/236.in: solution found with penalty 4972.2273486726
+inputs/medium/024.in: spawning job
+inputs/medium/073.in: solution found with penalty 5499.189388672184
+inputs/medium/165.in: spawning job
+inputs/medium/085.in: solution found with penalty 5977.953275590561
+inputs/medium/141.in: spawning job
+inputs/medium/042.in: solution found with penalty 1836.0501918237896
+inputs/medium/097.in: spawning job
+inputs/medium/018.in: solution found with penalty 6202.497902586697
+inputs/medium/232.in: spawning job
+inputs/medium/072.in: solution found with penalty 2945.534219534205
+inputs/medium/125.in: spawning job
+inputs/medium/212.in: solution found with penalty 6117.267445350014
+inputs/medium/190.in: spawning job
+inputs/medium/019.in: solution found with penalty 5663.351947725297
+inputs/medium/004.in: spawning job
+inputs/medium/050.in: solution found with penalty 6151.741808190257
+inputs/medium/169.in: spawning job
+inputs/medium/152.in: solution found with penalty 4958.503558431637
+inputs/medium/135.in: spawning job
+inputs/medium/025.in: solution found with penalty 7738.787187056844
+inputs/medium/137.in: spawning job
+inputs/medium/148.in: solution found with penalty 6201.887442431115
+inputs/medium/093.in: spawning job
+inputs/medium/100.in: solution found with penalty 4934.072088517336
+inputs/medium/129.in: spawning job
+inputs/medium/105.in: solution found with penalty 6882.504807203465
+inputs/medium/051.in: spawning job
+inputs/medium/071.in: solution found with penalty 7339.893888128568
+inputs/medium/052.in: spawning job
+inputs/medium/058.in: solution found with penalty 7190.867260443349
+inputs/medium/182.in: spawning job
+inputs/medium/195.in: solution found with penalty 5809.3499310166235
+inputs/medium/002.in: spawning job
+inputs/medium/088.in: solution found with penalty 5826.432800651658
+inputs/medium/107.in: spawning job
+inputs/medium/116.in: solution found with penalty 5913.867920014881
+inputs/medium/106.in: spawning job
+inputs/medium/024.in: solution found with penalty 5701.62171178688
+inputs/medium/145.in: spawning job
+inputs/medium/165.in: solution found with penalty 6004.433653852053
+inputs/medium/033.in: spawning job
+inputs/medium/097.in: solution found with penalty 5507.07573796626
+inputs/medium/061.in: spawning job
+inputs/medium/051.in: solution found with penalty 2074.8912822196007
+inputs/medium/010.in: spawning job
+inputs/medium/141.in: solution found with penalty 7166.865243734675
+inputs/medium/193.in: spawning job
+inputs/medium/190.in: solution found with penalty 5677.075737966262
+inputs/medium/196.in: spawning job
+inputs/medium/169.in: solution found with penalty 5381.068439068413
+inputs/medium/163.in: spawning job
+inputs/medium/232.in: solution found with penalty 6589.656142306694
+inputs/medium/175.in: spawning job
+inputs/medium/004.in: solution found with penalty 6134.229485349596
+inputs/medium/203.in: spawning job
+inputs/medium/125.in: solution found with penalty 6621.309174767677
+inputs/medium/218.in: spawning job
+inputs/medium/129.in: solution found with penalty 7615.436094222025
+inputs/medium/101.in: spawning job
+inputs/medium/033.in: solution found with penalty 1612.0145977956968
+inputs/medium/206.in: spawning job
+inputs/medium/227.in: solution found with penalty 17454.712713406207
+inputs/medium/213.in: spawning job
+inputs/medium/010.in: solution found with penalty 1767.2091014279788
+inputs/medium/020.in: spawning job
+inputs/medium/061.in: solution found with penalty 1889.0109483467725
+inputs/medium/037.in: spawning job
+inputs/medium/135.in: solution found with penalty 7010.789479368629
+inputs/medium/006.in: spawning job
+inputs/medium/093.in: solution found with penalty 6283.586548034992
+inputs/medium/122.in: spawning job
+inputs/medium/052.in: solution found with penalty 5285.861474317428
+inputs/medium/005.in: spawning job
+inputs/medium/037.in: solution found with penalty 403.00364944892425
+inputs/medium/142.in: spawning job
+inputs/medium/137.in: solution found with penalty 7253.756405985956
+inputs/medium/001.in: spawning job
+inputs/medium/020.in: solution found with penalty 1767.2091014279788
+inputs/medium/132.in: spawning job
+inputs/medium/107.in: solution found with penalty 5695.784270839994
+inputs/medium/229.in: spawning job
+inputs/medium/213.in: solution found with penalty 1530.0
+inputs/medium/210.in: spawning job
+inputs/medium/002.in: solution found with penalty 6292.98405666145
+inputs/medium/170.in: spawning job
+inputs/medium/193.in: solution found with penalty 4387.548817329902
+inputs/medium/167.in: spawning job
+inputs/medium/182.in: solution found with penalty 8197.022640566935
+inputs/medium/089.in: spawning job
+inputs/medium/145.in: solution found with penalty 6159.628157484334
+inputs/medium/112.in: spawning job
+inputs/medium/175.in: solution found with penalty 5128.5035584316365
+inputs/medium/027.in: spawning job
+inputs/medium/170.in: solution found with penalty 1119.526920636357
+inputs/medium/094.in: spawning job
+inputs/medium/218.in: solution found with penalty 5187.718675280865
+inputs/medium/202.in: spawning job
+inputs/medium/206.in: solution found with penalty 5314.383892304465
+inputs/medium/041.in: spawning job
+inputs/medium/163.in: solution found with penalty 6761.663257888341
+inputs/medium/222.in: spawning job
+inputs/medium/203.in: solution found with penalty 6796.179413494127
+inputs/medium/204.in: spawning job
+inputs/medium/106.in: solution found with penalty 12818.20485231725
+inputs/medium/098.in: spawning job
+inputs/medium/167.in: solution found with penalty 2074.8912822196007
+inputs/medium/127.in: spawning job
+inputs/medium/142.in: solution found with penalty 6593.041336518059
+inputs/medium/209.in: spawning job
+inputs/medium/101.in: solution found with penalty 7862.10019330802
+inputs/medium/003.in: spawning job
+inputs/medium/005.in: solution found with penalty 5670.271094798938
+inputs/medium/013.in: spawning job
+inputs/medium/196.in: solution found with penalty 19056.420793744925
+inputs/medium/186.in: spawning job
+inputs/medium/132.in: solution found with penalty 5587.706214162163
+inputs/medium/054.in: spawning job
+inputs/medium/122.in: solution found with penalty 7595.496573130973
+inputs/medium/226.in: spawning job
+inputs/medium/098.in: solution found with penalty 2313.7323726154114
+inputs/medium/068.in: spawning job
+inputs/medium/210.in: solution found with penalty 6907.066266724951
+inputs/medium/187.in: spawning job
+inputs/medium/001.in: solution found with penalty 7171.191525349181
+inputs/medium/179.in: spawning job
+inputs/medium/094.in: solution found with penalty 4816.495096025508
+inputs/medium/159.in: spawning job
+inputs/medium/089.in: solution found with penalty 5023.556116227752
+inputs/medium/230.in: spawning job
+inputs/medium/112.in: solution found with penalty 5901.111331994353
+inputs/medium/104.in: spawning job
+inputs/medium/229.in: solution found with penalty 7578.950909618237
+inputs/medium/074.in: spawning job
+inputs/medium/202.in: solution found with penalty 5663.351947725298
+inputs/medium/171.in: spawning job
+inputs/medium/006.in: solution found with penalty 13671.565118096956
+inputs/medium/059.in: spawning job
+inputs/medium/027.in: solution found with penalty 6621.309174767677
+inputs/medium/049.in: spawning job
+inputs/medium/204.in: solution found with penalty 6135.434766332776
+inputs/medium/235.in: spawning job
+inputs/medium/127.in: solution found with penalty 4463.8593376404315
+inputs/medium/114.in: spawning job
+inputs/medium/222.in: solution found with penalty 8964.985727886973
+inputs/medium/157.in: spawning job
+inputs/medium/041.in: solution found with penalty 6057.057106753216
+inputs/medium/228.in: spawning job
+inputs/medium/179.in: solution found with penalty 2313.7323726154114
+inputs/medium/214.in: spawning job
+inputs/medium/013.in: solution found with penalty 4457.786563151776
+inputs/medium/223.in: spawning job
+inputs/medium/114.in: solution found with penalty 1836.0501918237896
+inputs/medium/102.in: spawning job
+inputs/medium/068.in: solution found with penalty 4962.243740249222
+inputs/medium/189.in: spawning job
+inputs/medium/209.in: solution found with penalty 6404.42119273335
+inputs/medium/090.in: spawning job
+inputs/medium/054.in: solution found with penalty 4813.902230566374
+inputs/medium/237.in: spawning job
+inputs/medium/187.in: solution found with penalty 7203.6298171722565
+inputs/medium/111.in: spawning job
+inputs/medium/186.in: solution found with penalty 7139.939926566691
+inputs/medium/164.in: spawning job
+inputs/medium/226.in: solution found with penalty 7103.86159428575
+inputs/medium/173.in: spawning job
+inputs/medium/104.in: solution found with penalty 6461.472897329069
+inputs/medium/069.in: spawning job
+inputs/medium/230.in: solution found with penalty 6444.275523787717
+inputs/medium/155.in: spawning job
+inputs/medium/074.in: solution found with penalty 6551.071428945804
+inputs/medium/150.in: spawning job
+inputs/medium/189.in: solution found with penalty 2730.5743162116178
+inputs/medium/117.in: spawning job
+inputs/medium/159.in: solution found with penalty 7317.189508640507
+inputs/medium/009.in: spawning job
+inputs/medium/003.in: solution found with penalty 13851.448619210627
+inputs/medium/032.in: spawning job
+inputs/medium/171.in: solution found with penalty 6632.016854441014
+inputs/medium/023.in: spawning job
+inputs/medium/059.in: solution found with penalty 6995.453102607746
+inputs/medium/016.in: spawning job
+inputs/medium/049.in: solution found with penalty 6800.592179487818
+inputs/medium/028.in: spawning job
+inputs/medium/237.in: solution found with penalty 3512.7004280362426
+inputs/medium/138.in: spawning job
+inputs/medium/235.in: solution found with penalty 6919.70835083916
+inputs/medium/220.in: spawning job
+inputs/medium/157.in: solution found with penalty 6367.233134798521
+inputs/medium/099.in: spawning job
+inputs/medium/228.in: solution found with penalty 6373.070575745408
+inputs/medium/082.in: spawning job
+inputs/medium/102.in: solution found with penalty 5052.743320962186
+inputs/medium/096.in: spawning job
+inputs/medium/214.in: solution found with penalty 6769.26958202701
+inputs/medium/057.in: spawning job
+inputs/medium/223.in: solution found with penalty 5914.949626141636
+inputs/medium/064.in: spawning job
+inputs/medium/111.in: solution found with penalty 5178.750619860035
+inputs/medium/149.in: spawning job
+inputs/medium/090.in: solution found with penalty 6536.1514286717675
+inputs/medium/021.in: spawning job
+inputs/medium/155.in: solution found with penalty 3914.7368752647308
+inputs/large/124.in: spawning job
+inputs/medium/220.in: solution found with penalty 3556.6931291383944
+inputs/large/108.in: spawning job
+inputs/medium/173.in: solution found with penalty 6059.436450100582
+inputs/large/180.in: spawning job
+inputs/medium/164.in: solution found with penalty 6585.316783973409
+inputs/large/146.in: spawning job
+inputs/medium/032.in: solution found with penalty 5109.909529464223
+inputs/large/035.in: spawning job
+inputs/medium/023.in: solution found with penalty 5211.068439068412
+inputs/large/047.in: spawning job
+inputs/medium/009.in: solution found with penalty 5751.868773215277
+inputs/large/007.in: spawning job
+inputs/medium/149.in: solution found with penalty 2313.7323726154114
+inputs/large/070.in: spawning job
+inputs/medium/117.in: solution found with penalty 5608.23464757045
+inputs/large/205.in: spawning job
+inputs/medium/150.in: solution found with penalty 6209.989722819048
+inputs/large/121.in: spawning job
+inputs/medium/069.in: solution found with penalty 7227.390531630782
+inputs/large/119.in: spawning job
+inputs/medium/016.in: solution found with penalty 5211.068439068411
+inputs/large/014.in: spawning job
+inputs/medium/099.in: solution found with penalty 5254.5108573294865
+inputs/large/128.in: spawning job
+inputs/medium/138.in: solution found with penalty 5588.6734163826
+inputs/large/181.in: spawning job
+inputs/medium/028.in: solution found with penalty 6756.627497912801
+inputs/large/036.in: spawning job
+inputs/medium/096.in: solution found with penalty 5280.991235590978
+inputs/large/225.in: spawning job
+inputs/medium/082.in: solution found with penalty 5876.90886989269
+inputs/large/174.in: spawning job
+inputs/medium/064.in: solution found with penalty 4939.909529464223
+inputs/large/012.in: spawning job
+inputs/medium/057.in: solution found with penalty 6195.184226451332
+inputs/large/067.in: spawning job
+inputs/medium/021.in: solution found with penalty 6654.386882181857
+inputs/large/022.in: spawning job

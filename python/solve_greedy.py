@@ -7,6 +7,8 @@ from solution import Solution
 import math
 import numpy as np
 
+import time
+
 def squares_in_range(x, y, radius, D):
     squares = []
     for xp in range(x-radius, x+radius+1):
@@ -24,7 +26,10 @@ def donut_in_range(x, y, inner, outer, D):
     return squares
 
 def greedy_solver(instance: Instance) -> Solution:
-    while True:
+    best_sol = None
+    best_penalty = float("inf")
+    for iter in range(10000):
+        # if iter % 1000 == 0: print(iter)
         D = instance.D
         N = instance.N
         Rs = instance.R_s
@@ -79,16 +84,16 @@ def greedy_solver(instance: Instance) -> Solution:
             prob = np.array(prob)
             prob = prob - np.min(prob)
             # print("After shift")
-            print(prob)
+            # print(prob)
             tops = prob > (0.8 * max(prob))
             prob = (prob * tops) 
-            print(prob)
-            print(np.sum(prob))
+            # print(prob)
+            # print(np.sum(prob))
             if not np.sum(prob) == 0:
                 prob = prob / np.sum(prob)
             else:
                 prob = None
-            print(prob)
+            # print(prob)
             # print("Post (28,11):", prob[ind_28_11])
             # print("Post (25,8):", prob[ind_25_8])
             # print("Post (18,4):", prob[ind_18_4])
@@ -115,18 +120,22 @@ def greedy_solver(instance: Instance) -> Solution:
             for square in squares_in_range(x, y, Rp, D):
                 towers_in_range[square[0]][square[1]] += 1
             
-            
+        
         tower_sol = [Point(x=i,y=j) for i in range(D) for j in range(D) if towers_map[i][j]>0]
         sol = Solution(instance=instance,
                             towers=tower_sol)
         
+        curr_penalty = sol.penalty()
+        if curr_penalty < best_penalty:
+            best_sol = sol
+            best_penalty = curr_penalty
+
         # if sol.penalty() < 1600:
         #     print(sol.penalty())
         #     print([(i,j) for i in range(D) for j in range(D) if towers_map[i][j]>0])
         #     break
 
-        if sol.penalty() < 1960:
-            break
-
-    return sol
+        # if sol.penalty() < 1960:
+        #     break
+    return best_sol
     
