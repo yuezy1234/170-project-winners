@@ -85,7 +85,7 @@ def greedy_solver(instance: Instance) -> Solution:
             prob = prob - np.min(prob)
             # print("After shift")
             # print(prob)
-            tops = prob > (0.8 * max(prob))
+            tops = prob > (0.9 * max(prob))
             prob = (prob * tops) 
             # print(prob)
             # print(np.sum(prob))
@@ -124,7 +124,8 @@ def greedy_solver(instance: Instance) -> Solution:
         tower_sol = [Point(x=i,y=j) for i in range(D) for j in range(D) if towers_map[i][j]>0]
         sol = Solution(instance=instance,
                             towers=tower_sol)
-        
+        osol = Solution(instance=instance,
+                            towers=tower_sol)
         curr_penalty = sol.penalty()
         if curr_penalty < best_penalty:
             best_sol = sol
@@ -134,8 +135,12 @@ def greedy_solver(instance: Instance) -> Solution:
         #     print(sol.penalty())
         #     print([(i,j) for i in range(D) for j in range(D) if towers_map[i][j]>0])
         #     break
-
-        # if sol.penalty() < 1960:
-        #     break
+        # break
+        print(sol.penalty())
+        sol.anneal()
+        if sol.penalty() > osol.penalty():
+            sol = osol
+        if sol.penalty() < 4890:
+            break
     return best_sol
     
