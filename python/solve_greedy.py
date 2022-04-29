@@ -52,9 +52,13 @@ def greedy_solver(instance: Instance) -> Solution:
                 cities_in_range[square[0]][square[1]] += 1
             for square in donut_in_range(x, y, Rs, Rp-Rs, D):
                 donuts_in_range[square[0]][square[1]] += 1
+            for square in donut_in_range(x, y, Rp-Rs, Rp, D):
+                donuts_in_range[square[0]][square[1]] += 0.5
+            for square in donut_in_range(x, y, Rp, Rp+Rs, D):
+                donuts_in_range[square[0]][square[1]] += 0.1
 
-        city_award = 10
-        tower_penalty = -3
+        city_award = 5
+        tower_penalty = -10
         donut_penalty = -5
 
         while cities_left > 0:
@@ -140,7 +144,7 @@ def greedy_solver(instance: Instance) -> Solution:
         sol.anneal()
         if sol.penalty() > osol.penalty():
             sol = osol
-        if sol.penalty() < 4890:
+        if sol.penalty() < 4800:
             break
     return best_sol
     
