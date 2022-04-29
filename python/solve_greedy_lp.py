@@ -6,6 +6,7 @@ from solution import Solution
 
 import math
 import numpy as np
+import cvxpy as cp
 
 def squares_in_range(x, y, radius, D):
     squares = []

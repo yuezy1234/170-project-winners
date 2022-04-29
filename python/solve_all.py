@@ -60,6 +60,9 @@ def traverse_files(inroot: str, outroot):
 def solve_one(size, inf, outf):
     with open(inf) as f:
         instance = Instance.parse(f.readlines())
+        instance.num = int(inf.stem)-1
+        instance.size = inf.parent.stem
+        instance.sol_outf = outf
     assert instance.valid()
 
     solution = solver(Size(size), instance)

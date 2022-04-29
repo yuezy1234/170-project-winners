@@ -55,7 +55,7 @@ def cvx_solver(instance: Instance) -> Solution:
     
 
     # x = [[solver.IntVar(0.0, 1.0, f'x_{i}_{j}') for j in range(D)] for i in range(D)]
-    x = cp.Variable((D, D), boolean=True)
+    x = cp.Variable((D, D))
     print('Number of variables =', D * D)
 
     # Constraints
@@ -70,33 +70,38 @@ def cvx_solver(instance: Instance) -> Solution:
 
         constraints.append(constraint >= 1)
 
-    print('Number of constraints =', len(constraints))
-
-    w = [[0 for j in range(D)] for i in range(D)]
+    constraints.append(x >= np.zeros((D, D)))
+    constraints.append(x <= np.ones((D, D)))
+    w = cp.Variable((D, D))
 
     for i in range(D):
         for j in range(D):
+            constraint = 0
             for ip in range(i-Rp, i+Rp+1):
                 for jp in range(j-Rp, j+Rp+1):
                     if ip >= 0 and jp >= 0 and ip < D and jp < D and (i - ip)**2 + (j - jp)**2 <= Rp**2:
-                        w[i][j] += x[ip][jp]
+                        constraint += x[ip][jp]
+            constraints.append(w[i][j] >= constraint)
+            
+    print('Number of constraints =', len(constraints))
 
     # Obj
     P = 0
     for i in range(D):
         for j in range(D):
-            P += x[i][j] * 170 * (1 + 0.17 * w[i][j] + (0.17 * w[i][j])**2 / 2)     # TODO: Fix obj function
+            P += 170 * cp.exp(x[i][j] + 0.17 * w[i][j])     # TODO: Fix obj function
     socp = cp.Problem(cp.Minimize(P), constraints)
 
     # Solve
-    socp.solve(solver=cp.GLPK_MI)
+    socp.solve()
     if socp.status not in ["infeasible", "unbounded"]:
-
-    # Result
-    # print("Penalty achieved:", P.value)
-        print([(i,j) for i in range(D) for j in range(D) if x.value[i][j]>0])
+        opt_ans = [[1, 28], [1, 22], [9, 26], [8, 18], [16, 5], [24, 4], [20, 12], [28, 11]]
+        # Result
+        # print("Penalty achieved:", P.value)
+        print([x.value[i[0]][i[1]] for i in opt_ans])
+        # print(x.value)
         sol = Solution(instance=instance,
-                        towers=[Point(x=i,y=j) for i in range(D) for j in range(D) if x.value[i][j]>0])
+                        towers=[Point(x=i,y=j) for i in range(D) for j in range(D) if x.value[i][j]>0.5])
     else:
         print("FAILED")
         sol = None

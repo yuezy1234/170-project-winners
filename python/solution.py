@@ -81,6 +81,7 @@ class Solution:
         return sol
 
     def serialize(self, out):
+        print("# Penalty: ", self.penalty(), file=out)
         print(len(self.towers), file=out)
         for tower in self.towers:
             print(tower.x, tower.y, file=out)
@@ -135,6 +136,8 @@ class Solution:
         while T > 0.01:
             self.curr_pen = self.penalty()
             old_penalty = self.curr_pen
+            if np.sum(self.tower_overlap) == 0:
+                break
             tower_penalty_proportion = self.tower_overlap / np.sum(self.tower_overlap)
             # Can change to non-linear proportion
             # tower_penalty_proportion = tower_penalty_proportion ** 2 
@@ -179,14 +182,6 @@ class Solution:
                     self.curr_pen = new_penalty
                 else:
                     self.towers[tower_moved] = Point(tower_x, tower_y)
-            
-            if(self.curr_pen == new_penalty and delta != 0):
-                # print(f"Moving ({tower_x}, {tower_y}) to ({new_x}, {new_y})")
-                # print(f"Penalty: {old_penalty} -> {new_penalty} (d={delta})")
-                pass
-            else:
-                pass
-                # print("No Move")
             
             T *= 0.999
 
