@@ -52,9 +52,13 @@ def greedy_solver(instance: Instance) -> Solution:
                 cities_in_range[square[0]][square[1]] += 1
             for square in donut_in_range(x, y, Rs, Rp-Rs, D):
                 donuts_in_range[square[0]][square[1]] += 1
+            for square in donut_in_range(x, y, Rp-Rs, Rp, D):
+                donuts_in_range[square[0]][square[1]] += 0.5
+            for square in donut_in_range(x, y, Rp, Rp+Rs, D):
+                donuts_in_range[square[0]][square[1]] += 0.1
 
-        city_award = 10
-        tower_penalty = -3
+        city_award = 5
+        tower_penalty = -10
         donut_penalty = -5
 
         while cities_left > 0:
@@ -85,7 +89,7 @@ def greedy_solver(instance: Instance) -> Solution:
             prob = prob - np.min(prob)
             # print("After shift")
             # print(prob)
-            tops = prob > (0.8 * max(prob))
+            tops = prob > (0.9 * max(prob))
             prob = (prob * tops) 
             # print(prob)
             # print(np.sum(prob))
@@ -124,7 +128,8 @@ def greedy_solver(instance: Instance) -> Solution:
         tower_sol = [Point(x=i,y=j) for i in range(D) for j in range(D) if towers_map[i][j]>0]
         sol = Solution(instance=instance,
                             towers=tower_sol)
-        
+        osol = Solution(instance=instance,
+                            towers=tower_sol)
         curr_penalty = sol.penalty()
         if curr_penalty < best_penalty:
             best_sol = sol
@@ -134,8 +139,12 @@ def greedy_solver(instance: Instance) -> Solution:
         #     print(sol.penalty())
         #     print([(i,j) for i in range(D) for j in range(D) if towers_map[i][j]>0])
         #     break
-
-        # if sol.penalty() < 1960:
-        #     break
+        # break
+        print(sol.penalty())
+        sol.anneal()
+        if sol.penalty() > osol.penalty():
+            sol = osol
+        if sol.penalty() < 4800:
+            break
     return best_sol
     
