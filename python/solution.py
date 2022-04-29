@@ -128,7 +128,7 @@ class Solution:
         return out
     
     def anneal(self):
-        T = 10000
+        T = 1000
         D = self.instance.D
         cities = self.instance.cities
 
@@ -149,8 +149,8 @@ class Solution:
             dx = 0
             dy = 0
             while not((dx != 0 or dy != 0) and tower_x + dx >= 0 and tower_x + dx < D and tower_y + dy >= 0 and tower_y + dy < D):
-                x_abs = np.random.poisson(0.25) + 1
-                y_abs = np.random.poisson(0.25) + 1
+                x_abs = np.random.poisson(0.5) + 1
+                y_abs = np.random.poisson(0.5) + 1
 
                 dx = (np.random.randint(3) - 1) * x_abs
                 dy = (np.random.randint(3) - 1) * y_abs
@@ -181,8 +181,9 @@ class Solution:
                     self.towers[tower_moved] = Point(tower_x, tower_y)
             
             if(self.curr_pen == new_penalty and delta != 0):
-                print(f"Moving ({tower_x}, {tower_y}) to ({new_x}, {new_y})")
-                print(f"Penalty: {old_penalty} -> {new_penalty} (d={delta})")
+                # print(f"Moving ({tower_x}, {tower_y}) to ({new_x}, {new_y})")
+                # print(f"Penalty: {old_penalty} -> {new_penalty} (d={delta})")
+                pass
             else:
                 pass
                 # print("No Move")
