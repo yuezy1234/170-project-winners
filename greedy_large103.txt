@@ -1,0 +1,10 @@
+(CVXPY) Apr 29 03:24:05 AM: Encountered unexpected exception importing solver SCS:
+ImportError('DLL load failed while importing _scs_direct: The specified module could not be found.')
+Before: 37778.242392007705
+After: 37617.17855157999
+Before: 70124.32974099641
+After: 69016.66892161669
+Before: 39050.91726199254
+After: 38801.88720913982
+Before: 33386.275798568124
+After: 33386.275798568124

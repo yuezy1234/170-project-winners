@@ -26,6 +26,7 @@ def donut_in_range(x, y, inner, outer, D):
     return squares
 
 def greedy_solver(instance: Instance) -> Solution:
+    print("Hello")
     best_sol = None
     best_penalty = float("inf")
     for iter in range(10000):
@@ -57,9 +58,9 @@ def greedy_solver(instance: Instance) -> Solution:
             for square in donut_in_range(x, y, Rp, Rp+Rs, D):
                 donuts_in_range[square[0]][square[1]] += 0.1
 
-        city_award = 5
-        tower_penalty = -10
-        donut_penalty = -5
+        city_award = 10
+        tower_penalty = -3
+        donut_penalty = -2
 
         while cities_left > 0:
             # best_rating_square = [0, 0]
@@ -140,11 +141,12 @@ def greedy_solver(instance: Instance) -> Solution:
         #     print([(i,j) for i in range(D) for j in range(D) if towers_map[i][j]>0])
         #     break
         # break
-        print(sol.penalty())
+        print("Before:", sol.penalty())
         sol.anneal()
+        print("After:", sol.penalty())
         if sol.penalty() > osol.penalty():
             sol = osol
-        if sol.penalty() < 4800:
+        if sol.penalty() < 1430:
             break
     return best_sol
     
