@@ -1,33 +1,62 @@
-# from urllib.request import urlopen
-# from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
+from operator import itemgetter
+from selenium import webdriver
+import pandas as pd
+import time
 
-# size = ['small', 'medium', 'large']
+size = ['small', 'medium', 'large']
+cases = 241
+top_score = []
+url = "https://leaderboard.cs170.dev/#/leaderboard/small/"
+browser = webdriver.Chrome()
 
-# url = "https://leaderboard.cs170.dev/#/leaderboard/small/001"
-# html = urlopen(url).read()
-# soup = BeautifulSoup(html, features="html.parser")
+for case in ["{0:03}".format(i) for i in range(cases+1)]:
+    print(case)
+    browser.get(url + case)
+    time.sleep(0.5) # wait for page to fully load
+    soup = BeautifulSoup(browser.page_source, 'lxml')
+    data_table = soup.find_all('table')
 
-# # kill all script and style elements
-# for script in soup(["script", "style"]):
-#     script.extract()    # rip it out
+    if(len(data_table) == 0):
+        top_score.append(None)
+        continue
 
-# # get text
-# text = soup.get_text()
+    df = pd.read_html(str(data_table))
+    r = round(df[0]['Penalty'][0], 4)
+    top_score.append(r)
 
-# print(text)
+browser.close()
+print(top_score)
+print(len(top_score))
 
-# # break into lines and remove leading and trailing space on each
-# lines = (line.strip() for line in text.splitlines())
-# # break multi-headlines into a line each
-# chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
-# # drop blank lines
-# text = '\n'.join(chunk for chunk in chunks if chunk)
+scores = [None] * 242 
+with open('run_penalty.txt', 'r') as f:
+    lines = f.readlines()
 
-# print(text)
+    for line in lines:
+        if 'solution' in line and 'small' in line:
+            sp = line.split()
+            num = int(sp[0].split('/')[-1][:3])
+            pen = round(float(sp[-1]), 4)
+            scores[num] = pen
+            print(pen)
+            print(line)
+print(scores)
+print(len(scores))
 
-from urllib.request import Request, urlopen
+bads = []
 
-req = Request('https://leaderboard.cs170.dev/#/leaderboard/small/001', headers={'User-Agent': 'Mozilla/5.0'})
-webpage = urlopen(req).read()
+print("SCORES:")
+hits = 0
+for i in range(len(top_score)):
+    print(top_score[i], scores[i])
+    if top_score[i] == None or scores[i] == None: continue
+    if top_score[i] >= scores[i]:
+        hits += 1
+    else:
+        bads.append(i)
 
-print(webpage)
+print(f"Hits: {hits} / 240")
+
+for b in bads:
+    print(f"Case {b}:", top_score[b], scores[b])
