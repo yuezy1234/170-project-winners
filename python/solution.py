@@ -143,7 +143,7 @@ class Solution:
             # tower_penalty_proportion = tower_penalty_proportion ** 2 
             # tower_penalty_proportion = tower_penalty_proportion / np.sum(tower_penalty_proportion)
             # print(tower_penalty_proportion)
-            tower_moved = np.random.choice(len(self.towers), p=tower_penalty_proportion)
+            tower_moved = np.random.choice(len(self.towers), p=None)
             tower_x = self.towers[tower_moved].x
             tower_y = self.towers[tower_moved].y
 
@@ -152,8 +152,8 @@ class Solution:
             dx = 0
             dy = 0
             while not((dx != 0 or dy != 0) and tower_x + dx >= 0 and tower_x + dx < D and tower_y + dy >= 0 and tower_y + dy < D):
-                x_abs = np.random.poisson(0.25) + 1
-                y_abs = np.random.poisson(0.25) + 1
+                x_abs = np.random.poisson(0.5) + 1
+                y_abs = np.random.poisson(0.5) + 1
 
                 dx = (np.random.randint(3) - 1) * x_abs
                 dy = (np.random.randint(3) - 1) * y_abs

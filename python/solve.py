@@ -67,7 +67,7 @@ def main(args):
         inf = Path(args.input)
         instance.num = int(inf.stem)-1
         instance.size = inf.parent.stem
-        instance.sol_outf = outfile(args)
+        instance.sol_outf = Path(args.output)
         solver = SOLVERS[args.solver]
         solution = solver(instance)
         assert solution.valid()
