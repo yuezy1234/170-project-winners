@@ -19,9 +19,9 @@ from solution import Solution
 
 # Modify this line to import your own solvers.
 # YOUR CODE HERE
-from solve import solve_naive, solve_ilp, solve_greedy
+from solve import solve_naive, solve_ilp, solve_greedy, solve_greedy_savestates
 
-solve = solve_greedy
+solve = solve_greedy_savestates
 
 class Size(enum.Enum):
     SMALL = "small"
@@ -120,7 +120,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.parallelism is None:
-        args.parallelism = multiprocessing.cpu_count()-5
+        args.parallelism = multiprocessing.cpu_count() - 2
         print(f"Info: using parallelism=cpu_count() ({args.parallelism})")
     assert args.parallelism > 0, f"Can't use f{args.parallelism} cpus!"
 
