@@ -58,11 +58,11 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
     elif D == 50:
         greedy_iter_multiplier = 200
         max_tolerance_divider = 4
-        anneal_attempts = 10
+        anneal_attempts = 18
     else:
         greedy_iter_multiplier = 50
         max_tolerance_divider = 8
-        anneal_attempts = 5
+        anneal_attempts = 12
     greedy_iter_num = N * greedy_iter_multiplier
     
 
@@ -175,6 +175,8 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
     best_anneal_penalty = float("inf")
     best_anneal_sol = None
     for i in range(anneal_attempts):
+        if D >= 100:
+            best_sol_towers = best_sols[i % 3].towers[:]
         anneal_sol = Solution(instance=instance, towers=best_sol_towers[:])
         print(f"Anneal attempt {i}")
         anneal_sol.anneal()
