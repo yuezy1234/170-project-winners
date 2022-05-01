@@ -18,6 +18,7 @@ from solve_cvx import cvx_solver
 from solve_greedy import greedy_solver
 from solve_deep_greedy import deep_greedy_solver
 from solve_2d_greedy import greedy_solver_2d
+from solve_greedy_savestates import greedy_solver_savestates
 
 
 def solve_naive(instance: Instance) -> Solution:
@@ -41,6 +42,9 @@ def solve_deep_greedy(instance: Instance) -> Solution:
 def solve_greedy_2d(instance: Instance) -> Solution:
     return greedy_solver_2d(instance)
 
+def solve_greedy_savestates(instance: Instance) -> Solution:
+    return greedy_solver_savestates(instance)
+
 SOLVERS: Dict[str, Callable[[Instance], Solution]] = {
     "naive": solve_naive, 
     "ilp": solve_ilp,
@@ -48,6 +52,7 @@ SOLVERS: Dict[str, Callable[[Instance], Solution]] = {
     "greedy": solve_greedy,
     "deep_greedy": solve_deep_greedy,
     "greedy_2d": solve_greedy_2d,
+    "greedy_savestates": solve_greedy_savestates,
 }
 
 

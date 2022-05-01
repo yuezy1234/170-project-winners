@@ -129,11 +129,11 @@ class Solution:
         return out
     
     def anneal(self):
-        T = 1000
+        T = 100
         D = self.instance.D
         cities = self.instance.cities
 
-        while T > 0.01:
+        while T > 0.001:
             self.curr_pen = self.penalty()
             old_penalty = self.curr_pen
             if np.sum(self.tower_overlap) == 0:
