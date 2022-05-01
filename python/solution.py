@@ -138,12 +138,13 @@ class Solution:
             old_penalty = self.curr_pen
             if np.sum(self.tower_overlap) == 0:
                 break
-            tower_penalty_proportion = self.tower_overlap / np.sum(self.tower_overlap)
+            # tower_penalty_proportion = self.tower_overlap / np.sum(self.tower_overlap)
             # Can change to non-linear proportion
             # tower_penalty_proportion = tower_penalty_proportion ** 2 
             # tower_penalty_proportion = tower_penalty_proportion / np.sum(tower_penalty_proportion)
             # print(tower_penalty_proportion)
-            tower_moved = np.random.choice(len(self.towers), p=tower_penalty_proportion)
+            tower_moved = np.random.choice(len(self.towers))
+            # tower_moved = np.random.choice(len(self.towers), p=tower_penalty_proportion)
             tower_x = self.towers[tower_moved].x
             tower_y = self.towers[tower_moved].y
 
@@ -183,9 +184,9 @@ class Solution:
                 else:
                     self.towers[tower_moved] = Point(tower_x, tower_y)
             
-            # if(self.curr_pen == new_penalty and delta != 0):
-            #     print(f"Moving ({tower_x}, {tower_y}) to ({new_x}, {new_y})")
-            #     print(f"Penalty: {old_penalty} -> {new_penalty} (d={delta}, T={T})")
+            if(self.curr_pen == new_penalty and delta != 0):
+                # print(f"Moving ({tower_x}, {tower_y}) to ({new_x}, {new_y})")
+                print(f"Penalty: {old_penalty} -> {new_penalty} (d={delta}, T={T})")
             # else:
             #     pass
             #     # print("No Move")

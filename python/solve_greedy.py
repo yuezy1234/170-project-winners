@@ -132,11 +132,6 @@ def greedy_solver(instance: Instance) -> Solution:
         osol = Solution(instance=instance,
                             towers=tower_sol)
 
-        # if sol.penalty() < 1600:
-        #     print(sol.penalty())
-        #     print([(i,j) for i in range(D) for j in range(D) if towers_map[i][j]>0])
-        #     break
-        # break
         print("Before:", sol.penalty())
         sol.anneal()
         print("After:", sol.penalty())
