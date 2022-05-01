@@ -27,8 +27,18 @@ def donut_in_range(x, y, inner, outer, D):
     return squares
 
 def greedy_solver(instance: Instance) -> Solution:
+
+    with open('top_score.json', 'r') as f:
+        top_scores = json.loads(json.load(f))
+    
+    desired = top_scores[instance.size][instance.num]
+
+    start = time.time()
+
     best_sol = None
     best_penalty = float("inf")
+
+
     for iter in range(10000):
         # if iter % 1000 == 0: print(iter)
         D = instance.D
@@ -58,9 +68,9 @@ def greedy_solver(instance: Instance) -> Solution:
             for square in donut_in_range(x, y, Rp, Rp+Rs, D):
                 donuts_in_range[square[0]][square[1]] += 0.1
 
-        city_award = 2
-        tower_penalty = -1
-        donut_penalty = -1
+        city_award = 10
+        tower_penalty = -3
+        donut_penalty = -3
 
         while cities_left > 0:
             # best_rating_square = [0, 0]
@@ -90,7 +100,7 @@ def greedy_solver(instance: Instance) -> Solution:
             prob = prob - np.min(prob)
             # print("After shift")
             # print(prob)
-            tops = prob > (0.8 * max(prob))
+            tops = prob > (0.95 * max(prob))
             prob = (prob * tops) 
             # print(prob)
             # print(np.sum(prob))
@@ -127,6 +137,7 @@ def greedy_solver(instance: Instance) -> Solution:
             
         
         tower_sol = [Point(x=i,y=j) for i in range(D) for j in range(D) if towers_map[i][j]>0]
+        print(len(tower_sol))
         sol = Solution(instance=instance,
                             towers=tower_sol)
         osol = Solution(instance=instance,
@@ -152,8 +163,8 @@ def greedy_solver(instance: Instance) -> Solution:
             with instance.sol_outf.open('w') as g:
                 best_sol.serialize(g)
         print(instance.num, desired, best_penalty)
-        
-        if best_penalty < desired + 5 or time.time() - start >= 2000:
+
+        if best_penalty < desired + 5 or time.time() - start >= 2000 or iter >= 10:
             break
         
         

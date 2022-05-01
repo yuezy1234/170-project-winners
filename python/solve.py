@@ -70,7 +70,7 @@ def main(args):
     with infile(args) as f:
         instance = Instance.parse(f.readlines())
         inf = Path(args.input)
-        instance.num = int(inf.stem)-1
+        instance.num = int(inf.stem)
         instance.size = inf.parent.stem
         instance.sol_outf = Path(args.output)
         solver = SOLVERS[args.solver]
