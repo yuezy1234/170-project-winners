@@ -175,15 +175,21 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
     best_anneal_penalty = float("inf")
     best_anneal_sol = None
     for i in range(anneal_attempts):
-        anneal_sol = Solution(instance=instance, towers=best_sol_towers)
+        anneal_sol = Solution(instance=instance, towers=best_sol_towers[:])
         print(f"Anneal attempt {i}")
         anneal_sol.anneal()
         print(anneal_sol.penalty())
         
         curr_penalty = anneal_sol.penalty()
+        # print("Curr pen: ", curr_penalty)
+        # print("Best pen: ", best_anneal_penalty)
         if curr_penalty < best_anneal_penalty:
+            print("Achieved new best")
             best_anneal_sol = anneal_sol
             best_anneal_penalty = curr_penalty
             with instance.sol_outf.open('w') as g:
-                best_sol.serialize(g)
+                best_anneal_sol.serialize(g)
+        # print("best anneal sol: ", best_anneal_sol.penalty())
+    # print("best sol: ", best_sol.penalty())
+    print("Best anneal sol: ", best_anneal_sol.penalty())
     return best_anneal_sol
