@@ -14,34 +14,50 @@ def removesuffix(s: str, suffix: str):
 with open('top_score.json', 'r') as f:
     top_scores = json.loads(json.load(f))
 
-oroot = 'best7'
+iroot = 'inputs'
+
+oroot = 'best8'
 
 bads = []
 
 bad_paths = []
 
+goods = []
+
 hit = 0
 
-size='large'
+size='small'
 
-for outf in os.listdir(os.path.join(oroot, size)):
-    if not outf.endswith(".out"):
-        continue
-    outf = os.path.join(oroot, size, outf)
-    with open(outf, 'r') as f:
-        top_line = f.readline()
-        if '#' in top_line:
-            pen = round(float(top_line.split()[-1]), 4)
-            num = int(Path(outf).stem)
-            if num > 241 or top_scores[size][num] == None: continue
-            if pen <= top_scores[size][num]:
-                hit += 1
+for outf in os.listdir(os.path.join(iroot, size)):
+    # if not outf.endswith(".out"):
+    #     continue
+    outf = os.path.join(oroot, size, f"{removesuffix(Path(outf).name, '.in')}.out")
+
+    try:
+        with open(outf, 'r') as f:
+            top_line = f.readline()
+            if '#' in top_line:
+                pen = round(float(top_line.split()[-1]), 4)
+                num = int(Path(outf).stem)
+                if num > 241: continue
+                if top_scores[size][num] == None: 
+                    bads.append(num)
+                    bad_paths.append(outf)
+                if pen <= top_scores[size][num]:
+                    hit += 1
+                    goods.append(num)
+                    # print(f"Case {num}: {top_scores[size][num]} {pen}")
+                else:
+                    bads.append(num)
+                    bad_paths.append(outf)
+                    print(f"Case {num}: {top_scores[size][num]} {pen}")
             else:
                 bads.append(num)
                 bad_paths.append(outf)
-                print(f"Case {num}: {top_scores[size][num]} {pen}")
+    except:
+        bad_paths.append(outf)
 
-loc = os.path.join('a_work', size)
+loc = os.path.join('needs_work', size)
 
 for outf in bad_paths:
     dest = os.path.join(loc, f"{removesuffix(Path(outf).name, '.out')}.in")
@@ -49,5 +65,5 @@ for outf in bad_paths:
     print(src, '->', dest)
     shutil.copyfile(src, dest)
 
-print(len(bads))
+print(len(bad_paths))
             
