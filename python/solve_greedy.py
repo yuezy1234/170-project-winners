@@ -27,14 +27,6 @@ def donut_in_range(x, y, inner, outer, D):
     return squares
 
 def greedy_solver(instance: Instance) -> Solution:
-
-    with open('top_score.json', 'r') as f:
-        top_scores = json.loads(json.load(f))
-    
-    desired = top_scores[instance.size][instance.num]
-
-    start = time.time()
-
     best_sol = None
     best_penalty = float("inf")
     for iter in range(10000):

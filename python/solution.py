@@ -185,11 +185,10 @@ class Solution:
             
             # if(self.curr_pen == new_penalty and delta != 0):
             #     print(f"Moving ({tower_x}, {tower_y}) to ({new_x}, {new_y})")
-            #     print(f"Penalty: {old_penalty} -> {new_penalty} (d={delta})")
+            #     print(f"Penalty: {old_penalty} -> {new_penalty} (d={delta}, T={T})")
             # else:
             #     pass
             #     # print("No Move")
-            
             T *= 0.999
 
     def cities_covered(self, t):
