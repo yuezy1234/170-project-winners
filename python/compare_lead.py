@@ -16,7 +16,7 @@ with open('top_score.json', 'r') as f:
 
 iroot = 'inputs'
 
-oroot = 'best8'
+oroot = 'best9'
 
 bads = []
 
