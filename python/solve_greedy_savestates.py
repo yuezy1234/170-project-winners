@@ -4,6 +4,9 @@ from instance import Instance
 from solution import Solution
 
 import numpy as np
+import os
+
+greedy_dir = 'out_greedy_dir'
 
 def squares_in_coverage(x, y, D):
     delta = [[-2, 2], [-1, 2], [0, 2], [1, 2], [2, 2],
@@ -42,22 +45,34 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
     Rp = instance.R_p
     
     best_sol = None
-    min_towers = N
+    min_towers = N * 2
+
+    best_sols = []
+
+    
+    failure_threshold = N * 10
+    if D == 30:
+        greedy_iter_multiplier = 400
+        max_tolerance_divider = 2
+        anneal_attempts = 20
+    elif D == 50:
+        greedy_iter_multiplier = 200
+        max_tolerance_divider = 4
+        anneal_attempts = 10
+    else:
+        greedy_iter_multiplier = 50
+        max_tolerance_divider = 8
+        anneal_attempts = 5
+    greedy_iter_num = N * greedy_iter_multiplier
+    
 
     tower_sequences = [] # Array of sequences of towers
     subprob_sol = {} # Key: subproblem. Value: [min steps to reach this subproblem, array of OUTCOMES]
     
-    iter_num = N * 50
-    failure_threshold = N * 10
-    if D == 30:
-        max_tolerance_divider = 2
-    elif D == 50:
-        max_tolerance_divider = 4
-    else:
-        max_tolerance_divider = 8
-
-    for i in range(iter_num):
-        tolerance = (i % (iter_num // max_tolerance_divider)) / iter_num
+    for i in range(greedy_iter_num):
+        if i % 500 == 0:
+            print(f"Greedy iteration {i}")
+        tolerance = (i % (greedy_iter_num // max_tolerance_divider)) / greedy_iter_num
         towers = []
         cities_tracker = np.zeros(N, dtype=bool) # False for not covered
 
@@ -82,7 +97,7 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
             target_city_index = first_false_index(cities_tracker)
 
             if target_city_index == -1:
-                raise("Something went wrong")   
+                break  
 
             if curr_subprob not in subprob_sol:
                 target_city = cities[target_city_index]
@@ -137,15 +152,38 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
             sol = Solution(instance=instance,
                                 towers=tower_sol)
             pen = sol.penalty()
-            print(f"{iter_num}: Found length {len(towers)} with tolerance {tolerance}. Penalty: {pen}")
+            # print(f"{iter_num}: Found length {len(towers)} with tolerance {tolerance}. Penalty: {pen}")
             if len(towers) < min_towers or (len(towers) == min_towers and pen < best_sol.penalty()):
                 best_sol = sol
                 min_towers = len(towers)
-    print(f"Pre-anneal solution: {best_sol}")
+                best_sol_towers = tower_sol
+
+            best_sols.append(sol)
+
+                
     print(f"Towers: {min_towers}")
     print(f"Penalty: {best_sol.penalty()}")
     
-    for i in range(1):
-        print(f"-------Anneal Attempt #{i} ---------")
-        best_sol.anneal()
-    return best_sol
+    best_sols = sorted(best_sols, key=lambda s: (len(s.towers), s.penalty()))
+
+
+    for idx, s in enumerate(best_sols[:3]):
+        fout = os.path.join(greedy_dir, instance.size, str(instance.num) + '_' + str(idx) + '.greedy')
+        with open(fout, 'w') as f:
+            s.serialize(f)
+
+    best_anneal_penalty = float("inf")
+    best_anneal_sol = None
+    for i in range(anneal_attempts):
+        anneal_sol = Solution(instance=instance, towers=best_sol_towers)
+        print(f"Anneal attempt {i}")
+        anneal_sol.anneal()
+        print(anneal_sol.penalty())
+        
+        curr_penalty = anneal_sol.penalty()
+        if curr_penalty < best_anneal_penalty:
+            best_anneal_sol = anneal_sol
+            best_anneal_penalty = curr_penalty
+            with instance.sol_outf.open('w') as g:
+                best_sol.serialize(g)
+    return best_anneal_sol

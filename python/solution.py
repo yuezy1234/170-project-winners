@@ -132,12 +132,13 @@ class Solution:
         T = 100
         D = self.instance.D
         cities = self.instance.cities
+        self.city_cover = self.cities_covered_dict()
 
         while T > 0.001:
             self.curr_pen = self.penalty()
             old_penalty = self.curr_pen
-            if np.sum(self.tower_overlap) == 0:
-                break
+            # if np.sum(self.tower_overlap) == 0:
+            #     break
             # tower_penalty_proportion = self.tower_overlap / np.sum(self.tower_overlap)
             # Can change to non-linear proportion
             # tower_penalty_proportion = tower_penalty_proportion ** 2 
@@ -152,15 +153,13 @@ class Solution:
 
             dx = 0
             dy = 0
-            while not((dx != 0 or dy != 0) and tower_x + dx >= 0 and tower_x + dx < D and tower_y + dy >= 0 and tower_y + dy < D):
+            while not((dx != 0 or dy != 0) and tower_x + dx >= 0 and tower_x + dx < D and tower_y + dy >= 0 and tower_y + dy < D and Point(dx+tower_x, dy+tower_y) not in self.towers):
                 x_abs = np.random.poisson(0.5) + 1
                 y_abs = np.random.poisson(0.5) + 1
 
                 dx = (np.random.randint(3) - 1) * x_abs
                 dy = (np.random.randint(3) - 1) * y_abs
             
-            # print(dx, dy)
-
             new_x = tower_x + dx
             new_y = tower_y + dy
             
@@ -168,25 +167,43 @@ class Solution:
             new_cities_covered = self.cities_covered(self.towers[tower_moved])
 
             if new_cities_covered != curr_cities_covered:
-                self.towers[tower_moved] = Point(tower_x, tower_y)
-                continue
+                uncovered = curr_cities_covered.difference(new_cities_covered)
+                if any([len(self.city_cover[(p.x,p.y)]) == 1 for p in uncovered]):
+                    self.towers[tower_moved] = Point(tower_x, tower_y)
+                    # print("QUITTING")
+                    T *= 0.999
+                    continue
             
             # print(f"Moving ({tower_x}, {tower_y}) to ({new_x}, {new_y})")
             # print(f"Penalty: {self.curr_pen} -> {new_penalty} (d={delta})")
 
             new_penalty = self.penalty()
             delta = new_penalty - self.curr_pen
-            if delta < 0:
+            if delta <= 0:
                 self.curr_pen = new_penalty
             else:
                 if np.random.rand() < np.exp(-delta / T):
                     self.curr_pen = new_penalty
                 else:
                     self.towers[tower_moved] = Point(tower_x, tower_y)
-            
-            if(self.curr_pen == new_penalty and delta != 0):
-                # print(f"Moving ({tower_x}, {tower_y}) to ({new_x}, {new_y})")
-                print(f"Penalty: {old_penalty} -> {new_penalty} (d={delta}, T={T})")
+            # if(self.curr_pen == new_penalty and delta != 0):
+            #     print(f"Moving ({tower_x}, {tower_y}) to ({new_x}, {new_y})")
+            #     print(f"Penalty: {old_penalty} -> {new_penalty} (d={delta}, T={T})")
+            # print(tower_x, tower_y, new_x, new_y)
+            # print(curr_cities_covered)
+            # print(new_cities_covered)
+            if(self.curr_pen == new_penalty):
+                for p in curr_cities_covered.difference(new_cities_covered):
+                    self.city_cover[(p.x, p.y)].remove((tower_x, tower_y))
+                for p in new_cities_covered.difference(curr_cities_covered):
+                    self.city_cover[(p.x, p.y)].add((new_x, new_y))
+                for p in curr_cities_covered.intersection(new_cities_covered):
+                    # print((p.x, p.y))
+                    # print(self.city_cover[(p.x, p.y)])
+                    self.city_cover[(p.x, p.y)].add((new_x, new_y))
+                    self.city_cover[(p.x, p.y)].remove((tower_x, tower_y))
+                    # print(self.city_cover[(p.x, p.y)])
+
             # else:
             #     pass
             #     # print("No Move")
@@ -198,4 +215,16 @@ class Solution:
             if (city.x - t.x) ** 2 + (city.y - t.y) ** 2 <= self.instance.R_s ** 2:
                 covered.add(city)
         return covered
+    
+    def cities_covered_dict(self):
+        covered = {}
+        # print(self.instance.cities)
+        for city in self.instance.cities:
+            covered[(city.x, city.y)] = set()
+            for t in self.towers:
+                if (city.x - t.x) ** 2 + (city.y - t.y) ** 2 <= self.instance.R_s ** 2:
+                    covered[(city.x, city.y)].add((t.x, t.y))
+        # print(covered)
+        return covered
+
             
