@@ -153,8 +153,8 @@ class Solution:
             dx = 0
             dy = 0
             while not((dx != 0 or dy != 0) and tower_x + dx >= 0 and tower_x + dx < D and tower_y + dy >= 0 and tower_y + dy < D):
-                x_abs = np.random.poisson(0.25) + 1
-                y_abs = np.random.poisson(0.25) + 1
+                x_abs = np.random.poisson(0.5) + 1
+                y_abs = np.random.poisson(0.5) + 1
 
                 dx = (np.random.randint(3) - 1) * x_abs
                 dy = (np.random.randint(3) - 1) * y_abs

@@ -60,7 +60,7 @@ def traverse_files(inroot: str, outroot):
 def solve_one(size, inf, outf):
     with open(inf) as f:
         instance = Instance.parse(f.readlines())
-        instance.num = int(inf.stem)-1
+        instance.num = int(inf.stem)
         instance.size = inf.parent.stem
         instance.sol_outf = outf
     assert instance.valid()
@@ -120,7 +120,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.parallelism is None:
-        args.parallelism = multiprocessing.cpu_count()
+        args.parallelism = multiprocessing.cpu_count()-5
         print(f"Info: using parallelism=cpu_count() ({args.parallelism})")
     assert args.parallelism > 0, f"Can't use f{args.parallelism} cpus!"
 

@@ -20,7 +20,7 @@ for s in size:
     for case in ["{0:03}".format(i) for i in range(cases+1)]:
         print(s, case)
         browser.get(url_size + case)
-        # time.sleep(0.5) # wait for page to fully load
+        time.sleep(0.5) # wait for page to fully load
         soup = BeautifulSoup(browser.page_source, 'lxml')
         data_table = soup.find_all('table')
 

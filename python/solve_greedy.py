@@ -58,9 +58,9 @@ def greedy_solver(instance: Instance) -> Solution:
             for square in donut_in_range(x, y, Rp, Rp+Rs, D):
                 donuts_in_range[square[0]][square[1]] += 0.1
 
-        city_award = 10
-        tower_penalty = -3
-        donut_penalty = -2
+        city_award = 2
+        tower_penalty = -1
+        donut_penalty = -1
 
         while cities_left > 0:
             # best_rating_square = [0, 0]
@@ -90,7 +90,7 @@ def greedy_solver(instance: Instance) -> Solution:
             prob = prob - np.min(prob)
             # print("After shift")
             # print(prob)
-            tops = prob > (0.6 * max(prob))
+            tops = prob > (0.8 * max(prob))
             prob = (prob * tops) 
             # print(prob)
             # print(np.sum(prob))
@@ -132,15 +132,31 @@ def greedy_solver(instance: Instance) -> Solution:
         osol = Solution(instance=instance,
                             towers=tower_sol)
 
-        print("Before:", sol.penalty())
+        # if sol.penalty() < 1600:
+        #     print(sol.penalty())
+        #     print([(i,j) for i in range(D) for j in range(D) if towers_map[i][j]>0])
+        #     break
+        # break
+        # print("Pre:", sol.penalty())
         sol.anneal()
-        print("After:", sol.penalty())
+        # print("Post:", sol.penalty())
         if sol.penalty() > osol.penalty():
             sol = osol
-        if sol.penalty() < 4800:
+        # if sol.penalty() < 4800:
+        #     break
+
+        curr_penalty = sol.penalty()
+        if curr_penalty < best_penalty:
+            best_sol = sol
+            best_penalty = curr_penalty
+            with instance.sol_outf.open('w') as g:
+                best_sol.serialize(g)
+        print(instance.num, desired, best_penalty)
+        
+        if best_penalty < desired + 5 or time.time() - start >= 2000:
             break
         
-        # print(best_penalty)
+        
         
     return best_sol
     

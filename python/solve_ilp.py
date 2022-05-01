@@ -56,7 +56,7 @@ def ilp_solver(instance: Instance) -> Solution:
 
     x = [[solver.IntVar(0.0, 1.0, f'x_{i}_{j}') for j in range(D)] for i in range(D)]
 
-    print('Number of variables =', solver.NumVariables())
+    # print('Number of variables =', solver.NumVariables())
 
     # Constraints
     for p in cities:
@@ -69,7 +69,7 @@ def ilp_solver(instance: Instance) -> Solution:
 
         solver.Add(constraint >= 1)
 
-    print('Number of constraints =', solver.NumConstraints())
+    # print('Number of constraints =', solver.NumConstraints())
 
     w = [[0 for j in range(D)] for i in range(D)]
 
@@ -92,12 +92,19 @@ def ilp_solver(instance: Instance) -> Solution:
 
     # Result
     if status == pywraplp.Solver.OPTIMAL:
-        print('Objective value =', solver.Objective().Value())
-        for i in range(D):
-            for j in range(D):
-                if x[i][j].solution_value() > 0:
-                    print(f"({i},{j})")
+        # print('Objective value =', solver.Objective().Value())
+        # for i in range(D):
+        #     for j in range(D):
+        #         if x[i][j].solution_value() > 0:
+        #             print(f"({i},{j})")
         sol = Solution(instance=instance,
+                       towers=[Point(x=i,y=j) for i in range(D) for j in range(D) if x[i][j].solution_value()>0])
+        old_pen = sol.penalty()
+        # print(old_pen)
+        sol.anneal()
+        # print(sol.penalty())
+        if old_pen < sol.penalty():
+            sol = Solution(instance=instance,
                        towers=[Point(x=i,y=j) for i in range(D) for j in range(D) if x[i][j].solution_value()>0])
     else:
         print('The problem does not have an optimal solution.')
