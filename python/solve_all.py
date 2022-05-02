@@ -50,6 +50,8 @@ def removesuffix(s: str, suffix: str):
 
 def traverse_files(inroot: str, outroot):
     for size in os.listdir(inroot):
+        if not size in {"small", "medium", "large"}:
+            continue
         for inf in os.listdir(os.path.join(inroot, size)):
             if not inf.endswith(".in"):
                 continue
