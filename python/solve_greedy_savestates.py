@@ -6,7 +6,7 @@ from solution import Solution
 import numpy as np
 import os
 
-greedy_dir = 'out_greedy_dir'
+greedy_dir = 'out_greedy_dir_backwards'
 
 def squares_in_coverage(x, y, D):
     delta = [[-2, 2], [-1, 2], [0, 2], [1, 2], [2, 2],
@@ -17,11 +17,18 @@ def squares_in_coverage(x, y, D):
                 [-3, 0], [3, 0], [0, -3], [0, 3]
     ]
     possible = [(x + d[0], y + d[1]) for d in delta]
+    np.random.shuffle(possible)
     return list(filter(lambda loc : 0 <= loc[0] < D and 0 <= loc[1] < D, possible))
 
 # Return the first index of a FALSE value in an array. If none exists, return -1
 def first_false_index(arr):
     for i in range(len(arr)):
+        if arr[i] == False:
+            return i
+    return -1
+
+def last_false_index(arr):
+    for i in range(len(arr)-1, -1, -1):
         if arr[i] == False:
             return i
     return -1
@@ -68,6 +75,8 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
 
     tower_sequences = [] # Array of sequences of towers
     subprob_sol = {} # Key: subproblem. Value: [min steps to reach this subproblem, array of OUTCOMES]
+
+    greedy_mode = 1 # 1 for forward (top to bot), 0 for backward (bot to top), -1 for alternating. 0.5 for random between the two
     
     for i in range(greedy_iter_num):
         if i % 500 == 0:
@@ -88,13 +97,29 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
         
         cities_left = N
         failures = 0
+        city_finder_counter = 1
         while cities_left > 0 and failures < failure_threshold:
             curr_subprob = tuple(cities_tracker)
             if curr_subprob in subprob_sol and subprob_sol[curr_subprob][0] < len(towers):
                 failures += 1
                 continue # If we have seen the subproblem before and did better last time, just skip
             
-            target_city_index = first_false_index(cities_tracker)
+            if greedy_mode == 1:
+                target_city_index = first_false_index(cities_tracker)
+            elif greedy_mode == 0:
+                target_city_index = last_false_index(cities_tracker)
+            elif greedy_mode == -1:
+                if city_finder_counter == 1:
+                    target_city_index = first_false_index(cities_tracker)
+                else:
+                    target_city_index = last_false_index(cities_tracker)
+            else:
+                if np.random.rand() < greedy_mode:
+                    target_city_index = first_false_index(cities_tracker)
+                else:
+                    target_city_index = last_false_index(cities_tracker)
+
+            city_finder_counter = -city_finder_counter
 
             if target_city_index == -1:
                 break  
@@ -144,6 +169,7 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
                 cities_left -= 1
                 for city_neighbor in squares_in_coverage(city_square[0], city_square[1], D):
                     cities_in_range[city_neighbor[0]][city_neighbor[1]] -= 1
+        
         # if failures >= failure_threshold:
         #     print(f"{iter_num}: Unsuccessful find with tolerance {tolerance}")
         if cities_left == 0:
@@ -175,10 +201,10 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
     best_anneal_penalty = float("inf")
     best_anneal_sol = None
     for i in range(anneal_attempts):
-        if D >= 100:
+        if D >= 50:
             best_sol_towers = best_sols[i % 3].towers[:]
         anneal_sol = Solution(instance=instance, towers=best_sol_towers[:])
-        print(f"Anneal attempt {i}")
+        print(f"===Anneal attempt {i}===")
         anneal_sol.anneal()
         print(anneal_sol.penalty())
         
@@ -186,7 +212,7 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
         # print("Curr pen: ", curr_penalty)
         # print("Best pen: ", best_anneal_penalty)
         if curr_penalty < best_anneal_penalty:
-            print("Achieved new best")
+            print("NEW BEST!")
             best_anneal_sol = anneal_sol
             best_anneal_penalty = curr_penalty
             with instance.sol_outf.open('w') as g:
