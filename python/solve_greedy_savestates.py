@@ -17,7 +17,7 @@ def squares_in_coverage(x, y, D):
                 [-3, 0], [3, 0], [0, -3], [0, 3]
     ]
     possible = [(x + d[0], y + d[1]) for d in delta]
-    np.random.shuffle(possible)
+    # np.random.shuffle(possible)
     return list(filter(lambda loc : 0 <= loc[0] < D and 0 <= loc[1] < D, possible))
 
 # Return the first index of a FALSE value in an array. If none exists, return -1
@@ -56,21 +56,24 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
 
     best_sols = []
 
-    num_greedy_stored = 10
+    num_greedy_stored = 5
     
     failure_threshold = N * 50
     if D == 30:
         greedy_iter_multiplier = 400
         max_tolerance_divider = 1.5
-        anneal_attempts = 50
+        anneal_attempts = 40
+        num_greedy_stored = 2
     elif D == 50:
-        greedy_iter_multiplier = 400
+        greedy_iter_multiplier = 200
         max_tolerance_divider = 3
         anneal_attempts = 30
+        num_greedy_stored = 3
     else:
-        greedy_iter_multiplier = 50
-        max_tolerance_divider = 8
-        anneal_attempts = 12
+        greedy_iter_multiplier = 100
+        max_tolerance_divider = 6
+        anneal_attempts = 15
+        num_greedy_stored = 5
     greedy_iter_num = N * greedy_iter_multiplier
     
 
@@ -107,18 +110,24 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
             
             if greedy_mode == 1:
                 target_city_index = first_false_index(cities_tracker)
+                forward = True
             elif greedy_mode == 0:
                 target_city_index = last_false_index(cities_tracker)
+                forward = False
             elif greedy_mode == -1:
                 if city_finder_counter == 1:
                     target_city_index = first_false_index(cities_tracker)
+                    forward = True
                 else:
                     target_city_index = last_false_index(cities_tracker)
+                    forward = False
             else:
                 if np.random.rand() < greedy_mode:
                     target_city_index = first_false_index(cities_tracker)
+                    forward = True
                 else:
                     target_city_index = last_false_index(cities_tracker)
+                    forward = False
 
             city_finder_counter = -city_finder_counter
 
@@ -130,7 +139,12 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
                 max_cities_covered = 0
                 resulting_change = {} # Key: tuple of indices of uncovered cities. Value: location of tower that can cover it.
                 # Greedily choose the tower that covers the top-most city and as many others as possible
-                for tower_candidate in squares_in_coverage(target_city[0], target_city[1], D):
+                if forward:
+                    candidate_locations = squares_in_coverage(target_city[0], target_city[1], D)
+                else:
+                    candidate_locations = squares_in_coverage(target_city[0], target_city[1], D)[::-1]
+                
+                for tower_candidate in candidate_locations:
                     towers_covered = city_covered_indices(tower_candidate[0], tower_candidate[1], D, city_indices, curr_subprob)
                     if not towers_covered in resulting_change:
                         resulting_change[towers_covered] = tower_candidate

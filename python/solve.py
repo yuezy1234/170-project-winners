@@ -21,7 +21,7 @@ from solve_2d_greedy import greedy_solver_2d
 from solve_greedy_savestates import greedy_solver_savestates
 from hardcode.solve_large_089 import large_089
 from hardcode.solve_small_127 import small_127
-
+from hardcode.solve_small_003 import small_003
 
 def solve_naive(instance: Instance) -> Solution:
     return Solution(
@@ -53,6 +53,9 @@ def solve_large_089(instance: Instance) -> Solution:
 def solve_small_127(instance: Instance) -> Solution:
     return small_127(instance)
 
+def solve_small_003(instance: Instance) -> Solution:
+    return small_003(instance)
+
 SOLVERS: Dict[str, Callable[[Instance], Solution]] = {
     "naive": solve_naive, 
     "ilp": solve_ilp,
@@ -62,7 +65,8 @@ SOLVERS: Dict[str, Callable[[Instance], Solution]] = {
     "greedy_2d": solve_greedy_2d,
     "greedy_savestates": solve_greedy_savestates,
     "large_089": solve_large_089,
-    "small_127": solve_small_127
+    "small_127": solve_small_127,
+    "small_003": solve_small_003
 }
 
 
