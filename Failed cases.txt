@@ -1,7 +1,13 @@
 Small
-127: Maybe optimal solution has more circles
+003: +2 (evenly spaced)
+048: +2
+106: +9
+127: +9 (Gavin?)
+187: +10
+196: +17
+227: +1
+233: +4
 
+Medium
 
 Large: 
-075: A huge clump. We are ~45 ish. Not good
-089: A set of parrallel slanted lines. Can manually solve?
