@@ -12,55 +12,56 @@ def removesuffix(s: str, suffix: str):
 
     return s[:-len(suffix)]
 
+sizes = ['small', 'medium', 'large']
 
 url = 'https://project.cs170.dev/scoreboard/'
-size = 'small'
 iroot = 'inputs'
 oroot = 'best13'
 
-ranks = {}
+for size in sizes:
+    ranks = {}
 
-for outf in os.listdir(os.path.join(iroot, size)):
-    # if not outf.endswith(".out"):
-    #     continue
+    for outf in os.listdir(os.path.join(iroot, size)):
+        # if not outf.endswith(".out"):
+        #     continue
 
-    outf = os.path.join(oroot, size, f"{removesuffix(Path(outf).name, '.in')}.out")
-    # print(outf)
-    try:
-        with open(outf, 'r') as f:
-            top_line = f.readline()
-            if '#' in top_line:
-                pen = round(float(top_line.split()[-1]), 4)
-                num = int(Path(outf).stem)
-                if num > 241: continue
-            else:
-                print("empty")
-    except:
-        print(outf, "not here")
-        continue
+        outf = os.path.join(oroot, size, f"{removesuffix(Path(outf).name, '.in')}.out")
+        # print(outf)
+        try:
+            with open(outf, 'r') as f:
+                top_line = f.readline()
+                if '#' in top_line:
+                    pen = round(float(top_line.split()[-1]), 4)
+                    num = int(Path(outf).stem)
+                    if num > 241: continue
+                else:
+                    print("empty")
+        except:
+            print(outf, "not here")
+            continue
 
-    # Make a GET request to fetch the raw HTML content
-    html_content = requests.get(url + size + '/' + Path(outf).stem).text
+        # Make a GET request to fetch the raw HTML content
+        html_content = requests.get(url + size + '/' + Path(outf).stem).text
 
-    j = json.loads(html_content)['Entries']
-    scores = []
-    for entry in j:
-        scores.append(round(entry['TeamScore'], 4))
-    scores = sorted(scores)
-    rank = 0
-    for i in range(len(scores)):
-        if pen <= scores[i]:
-            break
-        # if i != 0 and scores[i] == scores[i-1]: continue
-        rank += 1
-    
-    ranks[Path(outf).stem] = rank
+        j = json.loads(html_content)['Entries']
+        scores = []
+        for entry in j:
+            scores.append(round(entry['TeamScore'], 4))
+        scores = sorted(scores)
+        rank = 0
+        for i in range(len(scores)):
+            if pen <= scores[i]:
+                break
+            # if i != 0 and scores[i] == scores[i-1]: continue
+            rank += 1
+        
+        ranks[Path(outf).stem] = rank
 
-f = open(f'{size}_ranks.txt', 'w')
-for k,v in ranks.items(): 
-    if v != 0:
-        print(k, ":", v, file=f)
-f.close()
+    f = open(f'{size}_ranks.txt', 'w')
+    for k,v in ranks.items(): 
+        if v != 0:
+            print(k, ":", v, file=f)
+    f.close()
 
 
 
