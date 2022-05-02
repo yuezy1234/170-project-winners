@@ -185,6 +185,7 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
         
         # if failures >= failure_threshold:
         #     print(f"{iter_num}: Unsuccessful find with tolerance {tolerance}")
+        towers.sort()
         if cities_left == 0:
             if towers not in tower_sequences:
                 tower_sequences.append(towers)
