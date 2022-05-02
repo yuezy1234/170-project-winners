@@ -12,11 +12,13 @@ def removesuffix(s: str, suffix: str):
 
     return s[:-len(suffix)]
 
-sizes = ['small', 'medium', 'large']
+sizes = ['large'] #['small', 'medium', 'large']
 
 url = 'https://project.cs170.dev/scoreboard/'
 iroot = 'inputs'
 oroot = 'best13'
+
+bad_paths = []
 
 for size in sizes:
     ranks = {}
@@ -57,13 +59,22 @@ for size in sizes:
         
         ranks[Path(outf).stem] = rank
 
+        if rank >= 10:
+            bad_paths.append(outf)
+
     f = open(f'{size}_ranks.txt', 'w')
     for k,v in ranks.items(): 
         if v != 0:
             print(k, ":", v, file=f)
     f.close()
 
+loc = os.path.join('high_prio', size)
 
+for outf in bad_paths:
+    dest = os.path.join(loc, f"{removesuffix(Path(outf).name, '.out')}.in")
+    src = os.path.join('inputs', size, f"{removesuffix(Path(outf).name, '.out')}.in")
+    print(src, '->', dest)
+    shutil.copyfile(src, dest)
 
 
 #     c += 1

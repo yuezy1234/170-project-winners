@@ -26,7 +26,7 @@ goods = []
 
 hit = 0
 
-size='small'
+size='large'
 
 c = 0
 
@@ -61,7 +61,7 @@ for outf in os.listdir(os.path.join(iroot, size)):
         print(outf, "not here")
         bad_paths.append(outf)
 
-loc = os.path.join('need_work', size)
+loc = os.path.join('needwork', size)
 
 for outf in bad_paths:
     dest = os.path.join(loc, f"{removesuffix(Path(outf).name, '.out')}.in")
