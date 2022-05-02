@@ -16,7 +16,7 @@ with open('top_score.json', 'r') as f:
 
 iroot = 'inputs'
 
-oroot = 'best9'
+oroot = 'best13'
 
 bads = []
 
@@ -28,9 +28,12 @@ hit = 0
 
 size='small'
 
+c = 0
+
 for outf in os.listdir(os.path.join(iroot, size)):
     # if not outf.endswith(".out"):
     #     continue
+    c += 1
     outf = os.path.join(oroot, size, f"{removesuffix(Path(outf).name, '.in')}.out")
 
     try:
@@ -55,9 +58,10 @@ for outf in os.listdir(os.path.join(iroot, size)):
                 bads.append(num)
                 bad_paths.append(outf)
     except:
+        print(outf, "not here")
         bad_paths.append(outf)
 
-loc = os.path.join('needs_work', size)
+loc = os.path.join('need_work', size)
 
 for outf in bad_paths:
     dest = os.path.join(loc, f"{removesuffix(Path(outf).name, '.out')}.in")
@@ -67,3 +71,4 @@ for outf in bad_paths:
 
 print(len(bad_paths))
             
+print(c)
