@@ -13,12 +13,14 @@ from instance import Instance
 from solution import Solution
 from file_wrappers import StdinFileWrapper, StdoutFileWrapper
 
-from solve_ilp import ilp_solver
-from solve_cvx import cvx_solver
+from unused_solves.solve_ilp import ilp_solver
+from unused_solves.solve_cvx import cvx_solver
 from solve_greedy import greedy_solver
-from solve_deep_greedy import deep_greedy_solver
+from unused_solves.solve_deep_greedy import deep_greedy_solver
 from solve_2d_greedy import greedy_solver_2d
 from solve_greedy_savestates import greedy_solver_savestates
+from hardcode.solve_large_089 import large_089
+from hardcode.solve_small_127 import small_127
 
 
 def solve_naive(instance: Instance) -> Solution:
@@ -45,6 +47,12 @@ def solve_greedy_2d(instance: Instance) -> Solution:
 def solve_greedy_savestates(instance: Instance) -> Solution:
     return greedy_solver_savestates(instance)
 
+def solve_large_089(instance: Instance) -> Solution:
+    return large_089(instance)
+
+def solve_small_127(instance: Instance) -> Solution:
+    return small_127(instance)
+
 SOLVERS: Dict[str, Callable[[Instance], Solution]] = {
     "naive": solve_naive, 
     "ilp": solve_ilp,
@@ -53,6 +61,8 @@ SOLVERS: Dict[str, Callable[[Instance], Solution]] = {
     "deep_greedy": solve_deep_greedy,
     "greedy_2d": solve_greedy_2d,
     "greedy_savestates": solve_greedy_savestates,
+    "large_089": solve_large_089,
+    "small_127": solve_small_127
 }
 
 
