@@ -17,7 +17,7 @@ def squares_in_coverage(x, y, D):
                 [-3, 0], [3, 0], [0, -3], [0, 3]
     ]
     possible = [(x + d[0], y + d[1]) for d in delta]
-    # np.random.shuffle(possible)
+    np.random.shuffle(possible)
     return list(filter(lambda loc : 0 <= loc[0] < D and 0 <= loc[1] < D, possible))
 
 # Return the first index of a FALSE value in an array. If none exists, return -1
@@ -45,7 +45,7 @@ def city_covered_indices(x, y, D, city_indices, subprob):
     indices.sort()
     return tuple(indices)
 
-def greedy_solver_savestates(instance: Instance) -> Solution:
+def greedy_solver_savestates_random(instance: Instance) -> Solution:
     D = instance.D
     N = instance.N
     Rs = instance.R_s
