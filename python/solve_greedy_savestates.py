@@ -6,7 +6,7 @@ from solution import Solution
 import numpy as np
 import os
 
-greedy_dir = 'out_greedy_dir'
+greedy_dir = 'out_greedy_dir_2'
 
 def squares_in_coverage(x, y, D):
     delta = [[-2, 2], [-1, 2], [0, 2], [1, 2], [2, 2],
@@ -61,7 +61,7 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
     failure_threshold = N * 50
     if D == 30:
         greedy_iter_multiplier = 400
-        max_tolerance_divider = 2
+        max_tolerance_divider = 1.5
         anneal_attempts = 50
     elif D == 50:
         greedy_iter_multiplier = 400
