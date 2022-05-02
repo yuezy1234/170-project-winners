@@ -6,7 +6,7 @@ from solution import Solution
 import numpy as np
 import os
 
-greedy_dir = 'out_greedy_dir_2'
+greedy_dir = 'out_greedy_dir'
 
 def squares_in_coverage(x, y, D):
     delta = [[-2, 2], [-1, 2], [0, 2], [1, 2], [2, 2],
