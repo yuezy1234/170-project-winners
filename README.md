@@ -9,3 +9,6 @@ python -m pip install --upgrade --user ortools
 ```bash
 python python/solve_all.py inputs outputs
 ```
+
+## Note
+Our best solutions are in the folder best15.
