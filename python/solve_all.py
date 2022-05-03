@@ -19,7 +19,7 @@ from solution import Solution
 
 # Modify this line to import your own solvers.
 # YOUR CODE HERE
-from solve import solve_naive, solve_ilp, solve_greedy, solve_greedy_savestates, solve_greedy_savestates_random
+from solve import solve_greedy_savestates_random #, solve_naive, solve_ilp, solve_greedy, solve_greedy_savestates
 
 solve = solve_greedy_savestates_random
 
