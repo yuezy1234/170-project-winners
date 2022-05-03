@@ -213,13 +213,13 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
         with open(fout, 'w') as f:
             s.serialize(f)
 
-    last_round_start = anneal_attempts - num_greedy_stored
+    last_round_start = anneal_attempts - num_greedy_stored * 2
     best_anneal_penalty = float("inf")
     best_anneal_sol = None
     for i in range(anneal_attempts):
         if D >= 50:
             if i < last_round_start:
-                best_sol_towers = best_sols[i % num_greedy_stored].towers[:]
+                best_sol_towers = best_sols[i % min(len(best_sols), num_greedy_stored)].towers[:]
             else:
                 best_sol_towers = best_sols[greedy_that_produced_best].towers[:]
         anneal_sol = Solution(instance=instance, towers=best_sol_towers[:])
