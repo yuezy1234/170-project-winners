@@ -23,6 +23,7 @@ from hardcode.solve_large_089 import large_089
 from hardcode.solve_small_127 import small_127
 from hardcode.solve_small_003 import small_003
 from solve_greedy_savestates_random import greedy_solver_savestates_random
+from hardcode.solve_large_196 import large_196
 
 def solve_naive(instance: Instance) -> Solution:
     return Solution(
@@ -60,6 +61,9 @@ def solve_small_003(instance: Instance) -> Solution:
 def solve_greedy_savestates_random(instance: Instance) -> Solution:
     return greedy_solver_savestates_random(instance)
 
+def solve_large_196(instance: Instance) -> Solution:
+    return large_196(instance)
+
 SOLVERS: Dict[str, Callable[[Instance], Solution]] = {
     "naive": solve_naive, 
     "ilp": solve_ilp,
@@ -71,7 +75,8 @@ SOLVERS: Dict[str, Callable[[Instance], Solution]] = {
     "large_089": solve_large_089,
     "small_127": solve_small_127,
     "small_003": solve_small_003,
-    "greedy_ssr": solve_greedy_savestates_random
+    "greedy_ssr": solve_greedy_savestates_random,
+    "large_196": solve_large_196
 }
 
 
