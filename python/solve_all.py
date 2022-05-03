@@ -21,7 +21,7 @@ from solution import Solution
 # YOUR CODE HERE
 from solve import solve_naive, solve_ilp, solve_greedy, solve_greedy_savestates, solve_greedy_savestates_random
 
-solve = solve_greedy_savestates
+solve = solve_greedy_savestates_random
 
 class Size(enum.Enum):
     SMALL = "small"
