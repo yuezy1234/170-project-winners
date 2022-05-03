@@ -4,3 +4,8 @@
 ```bash
 python -m pip install --upgrade --user ortools
 ```
+
+## To Run
+```bash
+python python/solve_all.py inputs outputs
+```
