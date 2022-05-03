@@ -122,7 +122,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.parallelism is None:
-        args.parallelism = multiprocessing.cpu_count() - 2
+        args.parallelism = 4 #multiprocessing.cpu_count() - 2
         print(f"Info: using parallelism=cpu_count() ({args.parallelism})")
     assert args.parallelism > 0, f"Can't use f{args.parallelism} cpus!"
 
