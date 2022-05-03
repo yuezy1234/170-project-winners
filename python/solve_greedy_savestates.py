@@ -223,7 +223,7 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
             else:
                 best_sol_towers = best_sols[greedy_that_produced_best].towers[:]
         anneal_sol = Solution(instance=instance, towers=best_sol_towers[:])
-        print(f"===Anneal attempt {i}===")
+        print(f"===Anneal attempt {i} for {instance.num}===")
         anneal_sol.anneal()
         print(anneal_sol.penalty())
         
@@ -231,7 +231,7 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
         # print("Curr pen: ", curr_penalty)
         # print("Best pen: ", best_anneal_penalty)
         if curr_penalty < best_anneal_penalty:
-            print("NEW BEST!")
+            print(f"NEW BEST on {instance.num}")
             if i < last_round_start:
                 greedy_that_produced_best = i % num_greedy_stored
             best_anneal_sol = anneal_sol
