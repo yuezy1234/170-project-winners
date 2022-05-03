@@ -70,8 +70,8 @@ def greedy_solver_savestates_random(instance: Instance) -> Solution:
     else:
         greedy_iter_multiplier = 100
         max_tolerance_divider = 6
-        anneal_attempts = 15
-        num_greedy_stored = 5
+        anneal_attempts = 40
+        num_greedy_stored = 10
     greedy_iter_num = N * greedy_iter_multiplier
     
 
