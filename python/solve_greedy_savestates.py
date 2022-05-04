@@ -63,10 +63,10 @@ def greedy_solver_savestates(instance: Instance) -> Solution:
         anneal_attempts = 80
         num_greedy_stored = 2
     elif D == 50:
-        greedy_iter_multiplier = 200
+        greedy_iter_multiplier = 400
         max_tolerance_divider = 3
-        anneal_attempts = 60
-        num_greedy_stored = 5
+        anneal_attempts = 150
+        num_greedy_stored = 10
     else:
         greedy_iter_multiplier = 100
         max_tolerance_divider = 6
